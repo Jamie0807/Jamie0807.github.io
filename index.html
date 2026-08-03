@@ -305,8 +305,9 @@
       const repoGrid = document.querySelector("#repo-grid");
       const repoCount = document.querySelector("#repo-count");
       const avatar = document.querySelector("#avatar");
+      const repoCacheKey = "jamie0807-public-repos";
       const apiUrl =
-        "https://api.github.com/users/Jamie0807/repos?sort=updated&per_page=100";
+        "https://api.github.com/users/Jamie0807/repos?sort=pushed&per_page=100";
 
       function formatDate(value) {
         return new Intl.DateTimeFormat("zh-CN", {
@@ -354,6 +355,24 @@
         const binary = atob(content.replace(/\s/g, ""));
         const bytes = Uint8Array.from(binary, (char) => char.charCodeAt(0));
         return new TextDecoder("utf-8").decode(bytes);
+      }
+
+      function readCachedRepos() {
+        try {
+          const cached = localStorage.getItem(repoCacheKey);
+          return cached ? JSON.parse(cached) : [];
+        } catch (error) {
+          console.warn("Repository cache unavailable", error);
+          return [];
+        }
+      }
+
+      function writeCachedRepos(repos) {
+        try {
+          localStorage.setItem(repoCacheKey, JSON.stringify(repos));
+        } catch (error) {
+          console.warn("Repository cache could not be saved", error);
+        }
       }
 
       async function fetchReadmeSummary(repo) {
@@ -434,14 +453,23 @@
           .join("");
       }
 
-      function renderError() {
+      function renderError(error) {
+        const cachedRepos = readCachedRepos();
+
+        if (cachedRepos.length > 0) {
+          repoCount.textContent = `${cachedRepos.length} 个公开项目`;
+          renderRepos(cachedRepos);
+          return;
+        }
+
         repoCount.textContent = "读取失败";
         repoGrid.innerHTML = `
           <div class="status">
-            GitHub 项目暂时加载失败。可以直接访问
+            GitHub API 可能限流或暂时不可访问。可以刷新页面，或直接访问
             <a href="https://github.com/${userName}?tab=repositories">GitHub 仓库列表</a>。
           </div>
         `;
+        console.error(error);
       }
 
       async function loadRepos() {
@@ -455,13 +483,13 @@
           }
 
           const repos = await response.json();
+          writeCachedRepos(repos);
           if (repos[0]?.owner?.avatar_url) {
             avatar.src = repos[0].owner.avatar_url;
           }
           renderRepos(await addReadmeSummaries(repos));
         } catch (error) {
-          console.error(error);
-          renderError();
+          renderError(error);
         }
       }
 

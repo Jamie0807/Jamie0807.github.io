@@ -36,6 +36,26 @@ assert.match(
   /代码维护于/,
   "page labels project dates as code maintenance time"
 );
+assert.match(
+  html,
+  /sort=pushed/,
+  "repository list request is sorted by last code push"
+);
+assert.match(
+  html,
+  /repoCacheKey/,
+  "page defines a local cache key for repository data"
+);
+assert.match(
+  html,
+  /readCachedRepos/,
+  "page can fall back to cached repository data"
+);
+assert.match(
+  html,
+  /GitHub API 可能限流或暂时不可访问/,
+  "page explains API failure instead of showing a generic error"
+);
 assert.doesNotMatch(
   html,
   /repo\.updated_at/,
