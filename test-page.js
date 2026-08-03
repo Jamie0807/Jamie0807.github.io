@@ -2,6 +2,7 @@ const fs = require("node:fs");
 const assert = require("node:assert/strict");
 
 const html = fs.readFileSync("index.html", "utf8");
+const repos = JSON.parse(fs.readFileSync("data/repos.json", "utf8"));
 
 assert.match(html, /id="repo-grid"/, "page exposes a repository grid");
 assert.match(
@@ -53,6 +54,21 @@ assert.match(
 );
 assert.match(
   html,
+  /staticReposUrl/,
+  "page defines a same-origin static repository data URL"
+);
+assert.match(
+  html,
+  /data\/repos\.json/,
+  "page can read prebuilt repository data from GitHub Pages"
+);
+assert.match(
+  html,
+  /loadStaticRepos/,
+  "page can fall back to prebuilt repository data when GitHub API fails"
+);
+assert.match(
+  html,
   /GitHub API 可能限流或暂时不可访问/,
   "page explains API failure instead of showing a generic error"
 );
@@ -60,6 +76,12 @@ assert.doesNotMatch(
   html,
   /repo\.updated_at/,
   "project cards should not use repository metadata updated_at"
+);
+assert.ok(Array.isArray(repos), "static repository data is an array");
+assert.ok(repos.length > 0, "static repository data includes repositories");
+assert.ok(
+  repos.every((repo) => repo.name && repo.html_url && repo.pushed_at),
+  "static repository data includes fields needed by project cards"
 );
 
 console.log("Page checks passed");

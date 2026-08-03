@@ -306,6 +306,7 @@
       const repoCount = document.querySelector("#repo-count");
       const avatar = document.querySelector("#avatar");
       const repoCacheKey = "jamie0807-public-repos";
+      const staticReposUrl = "data/repos.json";
       const apiUrl =
         "https://api.github.com/users/Jamie0807/repos?sort=pushed&per_page=100";
 
@@ -376,6 +377,10 @@
       }
 
       async function fetchReadmeSummary(repo) {
+        if (repo.readmeSummary) {
+          return repo.readmeSummary;
+        }
+
         try {
           const response = await fetch(
             `https://api.github.com/repos/${userName}/${repo.name}/readme`,
@@ -392,6 +397,17 @@
           console.warn(`README unavailable for ${repo.name}`, error);
           return "";
         }
+      }
+
+      async function loadStaticRepos() {
+        const response = await fetch(staticReposUrl, { cache: "no-store" });
+
+        if (!response.ok) {
+          throw new Error(`Static repository data returned ${response.status}`);
+        }
+
+        const repos = await response.json();
+        return Array.isArray(repos) ? repos : repos.repositories || [];
       }
 
       async function addReadmeSummaries(repos) {
@@ -489,7 +505,17 @@
           }
           renderRepos(await addReadmeSummaries(repos));
         } catch (error) {
-          renderError(error);
+          try {
+            const staticRepos = await loadStaticRepos();
+            writeCachedRepos(staticRepos);
+            if (staticRepos[0]?.owner?.avatar_url) {
+              avatar.src = staticRepos[0].owner.avatar_url;
+            }
+            renderRepos(staticRepos);
+          } catch (staticError) {
+            console.error(staticError);
+            renderError(error);
+          }
         }
       }
 
