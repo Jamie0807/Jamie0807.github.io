@@ -39,6 +39,16 @@ assert.match(
 );
 assert.match(
   html,
+  /@Jamie-qian/,
+  "page mentions the original account used before migration"
+);
+assert.match(
+  html,
+  /部分代码仓库由原账号迁移/,
+  "page explains that some repositories were migrated from another account"
+);
+assert.match(
+  html,
   /sort=pushed/,
   "repository list request is sorted by last code push"
 );

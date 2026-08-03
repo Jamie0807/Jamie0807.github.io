@@ -92,6 +92,19 @@
         line-height: 1.7;
       }
 
+      .migration-note {
+        max-width: 780px;
+        margin: 16px 0 0;
+        padding: 14px 16px;
+        border: 1px solid rgba(15, 118, 110, 0.2);
+        border-radius: 8px;
+        background: rgba(238, 245, 244, 0.84);
+        color: var(--accent-strong);
+        font-size: 0.98rem;
+        font-weight: 650;
+        line-height: 1.62;
+      }
+
       .actions {
         display: flex;
         flex-wrap: wrap;
@@ -245,6 +258,11 @@
           margin-top: 12px;
         }
 
+        .migration-note {
+          grid-column: 1 / -1;
+          font-size: 0.94rem;
+        }
+
         .actions {
           grid-column: 1 / -1;
         }
@@ -277,6 +295,10 @@
           <h1 id="page-title">Jamie0807</h1>
           <p class="intro">
             这里会自动展示我的 GitHub 公开项目。新增或更新公开仓库后，这个页面也会跟着刷新。
+          </p>
+          <p class="migration-note">
+            部分代码仓库由原账号迁移而来，原账号为 @Jamie-qian；页面中的“代码维护于”使用最后一次代码 push
+            时间，避免迁移时间被误解为实际维护时间。
           </p>
           <div class="actions" aria-label="Profile links">
             <a class="button primary" href="https://github.com/Jamie0807">GitHub 主页</a>
