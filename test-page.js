@@ -11,5 +11,20 @@ assert.match(
 );
 assert.match(html, /function renderRepos/, "page has repository rendering logic");
 assert.match(html, /function renderError/, "page has an error state");
+assert.match(
+  html,
+  /function getReadmeSummary/,
+  "page can extract a readable summary from README text"
+);
+assert.match(
+  html,
+  /\/repos\/\$\{userName\}\/\$\{repo\.name\}\/readme/,
+  "page fetches a repository README when needed"
+);
+assert.match(
+  html,
+  /repo\.description \|\| repo\.readmeSummary/,
+  "page prefers GitHub description before README summary"
+);
 
 console.log("Page checks passed");

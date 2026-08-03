@@ -325,6 +325,74 @@
           .replaceAll("'", "&#039;");
       }
 
+      function getReadmeSummary(markdown) {
+        const lines = markdown
+          .replaceAll("\r\n", "\n")
+          .split("\n")
+          .map((line) =>
+            line
+              .replace(/^#{1,6}\s+/, "")
+              .replace(/!\[[^\]]*\]\([^)]+\)/g, "")
+              .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+              .replace(/[*_`>#-]/g, "")
+              .trim()
+          )
+          .filter(Boolean);
+
+        const firstTextLine = lines.find((line) => line.length > 20) || lines[0];
+
+        if (!firstTextLine) {
+          return "";
+        }
+
+        return firstTextLine.length > 150
+          ? `${firstTextLine.slice(0, 147)}...`
+          : firstTextLine;
+      }
+
+      function decodeBase64Content(content) {
+        const binary = atob(content.replace(/\s/g, ""));
+        const bytes = Uint8Array.from(binary, (char) => char.charCodeAt(0));
+        return new TextDecoder("utf-8").decode(bytes);
+      }
+
+      async function fetchReadmeSummary(repo) {
+        try {
+          const response = await fetch(
+            `https://api.github.com/repos/${userName}/${repo.name}/readme`,
+            { headers: { Accept: "application/vnd.github+json" } }
+          );
+
+          if (!response.ok) {
+            return "";
+          }
+
+          const readme = await response.json();
+          return getReadmeSummary(decodeBase64Content(readme.content || ""));
+        } catch (error) {
+          console.warn(`README unavailable for ${repo.name}`, error);
+          return "";
+        }
+      }
+
+      async function addReadmeSummaries(repos) {
+        const visibleRepos = repos
+          .filter((repo) => !repo.fork)
+          .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+        const reposNeedingReadme = visibleRepos
+          .filter((repo) => !repo.description)
+          .slice(0, 24);
+        const summaries = await Promise.all(
+          reposNeedingReadme.map(async (repo) => [repo.id, await fetchReadmeSummary(repo)])
+        );
+        const summaryByRepoId = new Map(summaries);
+
+        return repos.map((repo) => ({
+          ...repo,
+          readmeSummary: summaryByRepoId.get(repo.id) || "",
+        }));
+      }
+
       function renderRepos(repos) {
         const visibleRepos = repos
           .filter((repo) => !repo.fork)
@@ -339,7 +407,8 @@
 
         repoGrid.innerHTML = visibleRepos
           .map((repo) => {
-            const description = repo.description || "这个项目还没有填写简介。";
+            const description =
+              repo.description || repo.readmeSummary || "这个项目还没有填写简介。";
             const language = repo.language
               ? `<span class="chip">${escapeHtml(repo.language)}</span>`
               : "";
@@ -389,7 +458,7 @@
           if (repos[0]?.owner?.avatar_url) {
             avatar.src = repos[0].owner.avatar_url;
           }
-          renderRepos(repos);
+          renderRepos(await addReadmeSummaries(repos));
         } catch (error) {
           console.error(error);
           renderError();
