@@ -50,12 +50,11 @@ async function main() {
   const repos = await fetchJson(
     `https://api.github.com/users/${userName}/repos?sort=pushed&per_page=100`
   );
-  const publicRepos = repos.filter((repo) => !repo.fork);
   const summaries = await Promise.all(
-    publicRepos.map(async (repo) => [repo.id, await fetchReadmeSummary(repo)])
+    repos.map(async (repo) => [repo.id, await fetchReadmeSummary(repo)])
   );
   const summaryByRepoId = new Map(summaries);
-  const data = publicRepos.map((repo) => ({
+  const data = repos.map((repo) => ({
     id: repo.id,
     name: repo.name,
     html_url: repo.html_url,

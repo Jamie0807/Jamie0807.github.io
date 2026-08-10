@@ -315,6 +315,16 @@
           <div class="status">正在从 GitHub 读取项目。</div>
         </div>
       </section>
+
+      <section aria-labelledby="fork-title">
+        <div class="section-head">
+          <h2 id="fork-title">Fork 项目</h2>
+          <span class="repo-count" id="fork-count">正在加载...</span>
+        </div>
+        <div class="repo-grid" id="fork-grid" aria-live="polite">
+          <div class="status">正在从 GitHub 读取 Fork 项目。</div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-shell">
@@ -325,6 +335,8 @@
       const userName = "Jamie0807";
       const repoGrid = document.querySelector("#repo-grid");
       const repoCount = document.querySelector("#repo-count");
+      const forkGrid = document.querySelector("#fork-grid");
+      const forkCount = document.querySelector("#fork-count");
       const avatar = document.querySelector("#avatar");
       const repoCacheKey = "jamie0807-public-repos";
       const staticReposUrl = "data/repos.json";
@@ -432,10 +444,10 @@
       }
 
       async function addReadmeSummaries(repos) {
-        const visibleRepos = repos
-          .filter((repo) => !repo.fork)
-          .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
-        const reposNeedingReadme = visibleRepos
+        const sortedRepos = [...repos].sort(
+          (a, b) => new Date(b.pushed_at) - new Date(a.pushed_at)
+        );
+        const reposNeedingReadme = sortedRepos
           .filter((repo) => !repo.description)
           .slice(0, 24);
         const summaries = await Promise.all(
@@ -449,19 +461,13 @@
         }));
       }
 
-      function renderRepos(repos) {
-        const visibleRepos = repos
-          .filter((repo) => !repo.fork)
-          .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
-
-        repoCount.textContent = `${visibleRepos.length} 个公开项目`;
-
-        if (visibleRepos.length === 0) {
-          repoGrid.innerHTML = '<div class="status">暂时没有可展示的公开项目。</div>';
+      function renderRepoCards(targetGrid, repos, emptyMessage) {
+        if (repos.length === 0) {
+          targetGrid.innerHTML = `<div class="status">${emptyMessage}</div>`;
           return;
         }
 
-        repoGrid.innerHTML = visibleRepos
+        targetGrid.innerHTML = repos
           .map((repo) => {
             const description =
               repo.description || repo.readmeSummary || "这个项目还没有填写简介。";
@@ -490,22 +496,36 @@
           .join("");
       }
 
+      function renderRepos(repos) {
+        const sortedRepos = [...repos].sort(
+          (a, b) => new Date(b.pushed_at) - new Date(a.pushed_at)
+        );
+        const originalRepos = sortedRepos.filter((repo) => !repo.fork);
+        const forkRepos = sortedRepos.filter((repo) => repo.fork);
+
+        repoCount.textContent = `${originalRepos.length} 个公开项目`;
+        forkCount.textContent = `${forkRepos.length} 个 Fork 项目`;
+        renderRepoCards(repoGrid, originalRepos, "暂时没有可展示的公开项目。");
+        renderRepoCards(forkGrid, forkRepos, "暂时没有可展示的 Fork 项目。");
+      }
+
       function renderError(error) {
         const cachedRepos = readCachedRepos();
 
         if (cachedRepos.length > 0) {
-          repoCount.textContent = `${cachedRepos.length} 个公开项目`;
           renderRepos(cachedRepos);
           return;
         }
 
         repoCount.textContent = "读取失败";
+        forkCount.textContent = "读取失败";
         repoGrid.innerHTML = `
           <div class="status">
             GitHub API 可能限流或暂时不可访问。可以刷新页面，或直接访问
             <a href="https://github.com/${userName}?tab=repositories">GitHub 仓库列表</a>。
           </div>
         `;
+        forkGrid.innerHTML = '<div class="status">Fork 项目暂时无法读取。</div>';
         console.error(error);
       }
 

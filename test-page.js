@@ -5,6 +5,8 @@ const html = fs.readFileSync("index.html", "utf8");
 const repos = JSON.parse(fs.readFileSync("data/repos.json", "utf8"));
 
 assert.match(html, /id="repo-grid"/, "page exposes a repository grid");
+assert.match(html, /id="fork-grid"/, "page exposes a fork repository grid");
+assert.match(html, /Fork 项目/, "page has a separate fork project section");
 assert.match(
   html,
   /https:\/\/api\.github\.com\/users\/Jamie0807\/repos/,
@@ -92,6 +94,10 @@ assert.ok(repos.length > 0, "static repository data includes repositories");
 assert.ok(
   repos.every((repo) => repo.name && repo.html_url && repo.pushed_at),
   "static repository data includes fields needed by project cards"
+);
+assert.ok(
+  repos.some((repo) => repo.fork),
+  "static repository data includes forked repositories"
 );
 
 console.log("Page checks passed");

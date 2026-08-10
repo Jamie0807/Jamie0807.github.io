@@ -1,31 +1,45 @@
 [
   {
-    "id": 1321106140,
-    "name": "Jamie0807.github.io",
-    "html_url": "https://github.com/Jamie0807/Jamie0807.github.io",
+    "id": 1327661803,
+    "name": "React19",
+    "html_url": "https://github.com/Jamie0807/React19",
     "description": null,
     "fork": false,
     "stargazers_count": 0,
-    "language": "HTML",
-    "pushed_at": "2026-08-03T02:55:22Z",
+    "language": "TypeScript",
+    "pushed_at": "2026-08-10T15:32:19Z",
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": ""
+    "readmeSummary": "这是一个使用 pnpm create vite 创建的 React 学习项目，技术栈为 React、TypeScript 和 Vite。项目主要用于练习 React 的基础组件写法、Hooks、React 18 新增能力、React 19 新增能力、ref、Suspense、memo、数据请求..."
   },
   {
-    "id": 1297374731,
-    "name": "magicut",
-    "html_url": "https://github.com/Jamie0807/magicut",
-    "description": null,
-    "fork": false,
-    "stargazers_count": 1,
-    "language": "TypeScript",
-    "pushed_at": "2026-08-02T08:57:54Z",
+    "id": 1329997873,
+    "name": "redux-toolkit",
+    "html_url": "https://github.com/Jamie0807/redux-toolkit",
+    "description": "The official, opinionated, batteries-included toolset for efficient Redux development",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-08-09T22:37:41Z",
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "Magicut 是一个 AI 驱动的桌面端智能视频剪辑平台，面向短视频创作者、课程内容创作者和需要快速组织音视频素材的个人工作流。"
+    "readmeSummary": "[](https://www.npmjs.com/package/@reduxjs/toolkit)"
+  },
+  {
+    "id": 1329998463,
+    "name": "jotai",
+    "html_url": "https://github.com/Jamie0807/jotai",
+    "description": "👻 Primitive and flexible state management for React",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-08-04T02:10:58Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "visit jotai.org or npm i jotai"
   },
   {
     "id": 1319816074,
@@ -35,11 +49,53 @@
     "fork": false,
     "stargazers_count": 1,
     "language": "TypeScript",
-    "pushed_at": "2026-08-02T05:00:14Z",
+    "pushed_at": "2026-08-03T12:58:09Z",
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
     "readmeSummary": "AI Workflow 是一个面向实际业务落地的 AI 工作流开发平台。它提供可视化编排、测试运行、版本发布、API 调用、知识库检索和执行监控能力，用于把 LLM、RAG、HTTP 请求、条件分支和结构化输出组合成可维护、可复用、可集成的自动化流程。"
+  },
+  {
+    "id": 1297374731,
+    "name": "magicut",
+    "html_url": "https://github.com/Jamie0807/magicut",
+    "description": null,
+    "fork": false,
+    "stargazers_count": 1,
+    "language": "TypeScript",
+    "pushed_at": "2026-08-03T12:57:54Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": ""
+  },
+  {
+    "id": 1321106140,
+    "name": "Jamie0807.github.io",
+    "html_url": "https://github.com/Jamie0807/Jamie0807.github.io",
+    "description": null,
+    "fork": false,
+    "stargazers_count": 0,
+    "language": "HTML",
+    "pushed_at": "2026-08-03T04:07:10Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": ""
+  },
+  {
+    "id": 1319809111,
+    "name": "dify",
+    "html_url": "https://github.com/Jamie0807/dify",
+    "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-08-02T03:04:57Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "<a href=\"https://cloud.dify.ai\"Dify Cloud</a ·"
   },
   {
     "id": 1098919427,
@@ -54,6 +110,62 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
     "readmeSummary": "基于 Python + React 的全栈数据分析与预测平台，使用英国国家统计局（ONS）官方数据，对英国各地区 65 岁及以上人口比例进行长期预测与可视化交互分析。"
+  },
+  {
+    "id": 1329594831,
+    "name": "zustand",
+    "html_url": "https://github.com/Jamie0807/zustand",
+    "description": "🐻 Bear necessities for state management in React",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-07-29T23:33:21Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "<img src=\"./docs/bear.jpg\" /"
+  },
+  {
+    "id": 1321099010,
+    "name": "browserslist",
+    "html_url": "https://github.com/Jamie0807/browserslist",
+    "description": "🦔 Share target browsers between different front-end tools, like Autoprefixer, Stylelint and babel-preset-env",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-07-23T11:20:55Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "<img width=\"120\" height=\"120\" alt=\"Browserslist logo by Anton Popov\""
+  },
+  {
+    "id": 1311007893,
+    "name": "index-tts",
+    "html_url": "https://github.com/Jamie0807/index-tts",
+    "description": "An Industrial-Level Controllable and Efficient Zero-Shot Text-To-Speech System",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-07-14T11:43:37Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "<img src='assets/indexicon.png' width=\"250\"/"
+  },
+  {
+    "id": 1297338016,
+    "name": "superpowers",
+    "html_url": "https://github.com/Jamie0807/superpowers",
+    "description": "An agentic skills framework & software development methodology that works.",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-07-10T15:58:09Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "Superpowers is a complete software development methodology for your coding agents, built on top of a set of composable skills and some initial inst..."
   },
   {
     "id": 1292577798,
@@ -84,6 +196,20 @@
     "readmeSummary": "一个本地运行的浏览器 agent 聊天工具。前端使用 React 和 Vite，后端使用 Express，agent 运行时基于 LangChain.js，并通过 OpenAI 兼容聊天模型生成回复。"
   },
   {
+    "id": 1300670718,
+    "name": "skills",
+    "html_url": "https://github.com/Jamie0807/skills",
+    "description": "Anthony Fu's curated collection of agent skills.",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-06-23T00:14:36Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "A curated collection of Agent Skills reflecting Anthony Fu's preferences, experience, and best practices, along with usage documentation for the to..."
+  },
+  {
     "id": 1263725962,
     "name": "team-spec",
     "html_url": "https://github.com/Jamie0807/team-spec",
@@ -112,6 +238,20 @@
     "readmeSummary": "用于学习、验证和沉淀 Codex 工作流的实验仓库。"
   },
   {
+    "id": 1262911259,
+    "name": "CLI-Anything",
+    "html_url": "https://github.com/Jamie0807/CLI-Anything",
+    "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-06-08T10:27:12Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "<h1 align=\"center\"<img src=\"assets/icon.png\" alt=\"\" width=\"64\" style=\"verticalalign: middle;\"&nbsp; CLIAnything: Making ALL Software AgentNative</h1"
+  },
+  {
     "id": 1216617015,
     "name": "langchain",
     "html_url": "https://github.com/Jamie0807/langchain",
@@ -126,6 +266,216 @@
     "readmeSummary": "LangChain.js / LangGraph.js"
   },
   {
+    "id": 1257912341,
+    "name": "langchainjs",
+    "html_url": "https://github.com/Jamie0807/langchainjs",
+    "description": "The agent engineering platform",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-06-03T05:33:06Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "<a href=\"https://www.langchain.com/\""
+  },
+  {
+    "id": 1257860273,
+    "name": "typescript-sdk",
+    "html_url": "https://github.com/Jamie0807/typescript-sdk",
+    "description": "The official TypeScript SDK for Model Context Protocol servers and clients",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-06-02T18:06:52Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "This is the main branch which contains v2 of the SDK (currently in development, prealpha)."
+  },
+  {
+    "id": 1258316528,
+    "name": "xyflow",
+    "html_url": "https://github.com/Jamie0807/xyflow",
+    "description": "React Flow | Svelte Flow - Powerful open source libraries for building node-based UIs with React (https://reactflow.dev) or Svelte (https://svelteflow.dev). Ready out-of-the-box and infinitely customizable.",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-06-02T11:45:08Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "Powerful open source libraries for building nodebased UIs with React or Svelte. Ready outofthebox and infinitely customizable."
+  },
+  {
+    "id": 1253092219,
+    "name": "langgraphjs",
+    "html_url": "https://github.com/Jamie0807/langgraphjs",
+    "description": "Framework to build resilient language agents as graphs.",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-05-29T00:38:45Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "[](https://langchainai.github.io/langgraphjs/)"
+  },
+  {
+    "id": 1252530538,
+    "name": "turborepo",
+    "html_url": "https://github.com/Jamie0807/turborepo",
+    "description": "Build system optimized for JavaScript and TypeScript, written in Rust",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-05-28T15:58:34Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "<a href=\"https://turborepo.dev\""
+  },
+  {
+    "id": 1252462037,
+    "name": "supabase",
+    "html_url": "https://github.com/Jamie0807/supabase",
+    "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-05-28T14:40:09Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": ""
+  },
+  {
+    "id": 1252535043,
+    "name": "react",
+    "html_url": "https://github.com/Jamie0807/react",
+    "description": "The library for web and native user interfaces.",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-05-28T12:46:40Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "React &middot; [](https://github.com/facebook/react/blob/main/LICENSE) [](https://www.npmjs.com/package/react) [](https://github.com/facebook/react..."
+  },
+  {
+    "id": 1251985338,
+    "name": "node",
+    "html_url": "https://github.com/Jamie0807/node",
+    "description": "Node.js JavaScript runtime ✨🐢🚀✨",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-05-27T19:31:53Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "Node.js is an opensource, crossplatform JavaScript runtime environment."
+  },
+  {
+    "id": 1248103516,
+    "name": "warp",
+    "html_url": "https://github.com/Jamie0807/warp",
+    "description": "Warp is an agentic development environment, born out of the terminal.",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-05-24T07:00:16Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "<a href=\"https://www.warp.dev\""
+  },
+  {
+    "id": 1247564419,
+    "name": "OpenSpec",
+    "html_url": "https://github.com/Jamie0807/OpenSpec",
+    "description": "Spec-driven development (SDD) for AI coding assistants.",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-05-23T05:47:52Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "<a href=\"https://github.com/FissionAI/OpenSpec\""
+  },
+  {
+    "id": 1247316031,
+    "name": "react-native",
+    "html_url": "https://github.com/Jamie0807/react-native",
+    "description": "A framework for building native applications using React",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-05-23T05:30:36Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "<a href=\"https://reactnative.dev/\""
+  },
+  {
+    "id": 1247564742,
+    "name": "spec-kit",
+    "html_url": "https://github.com/Jamie0807/spec-kit",
+    "description": "💫 Toolkit to help you get started with Spec-Driven Development",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-05-22T19:00:38Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "<img src=\"./media/logolarge.webp\" alt=\"Spec Kit Logo\" width=\"200\" height=\"200\"/"
+  },
+  {
+    "id": 1248082658,
+    "name": "postcss",
+    "html_url": "https://github.com/Jamie0807/postcss",
+    "description": "Transforming styles with JS plugins",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-05-19T09:50:45Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "<img align=\"right\" width=\"95\" height=\"95\""
+  },
+  {
+    "id": 1244381796,
+    "name": "awesome-design-md",
+    "html_url": "https://github.com/Jamie0807/awesome-design-md",
+    "description": "A collection of DESIGN.md files inspired by popular brand design systems. Drop one into your project and let coding agents generate a matching UI.",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-05-18T14:31:59Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "<a href=\"https://github.com/VoltAgent/voltagent\""
+  },
+  {
+    "id": 1262827293,
+    "name": "awesome-codex-skills",
+    "html_url": "https://github.com/Jamie0807/awesome-codex-skills",
+    "description": "A curated list of practical Codex skills for automating workflows across the Codex CLI and API.",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-05-15T06:24:47Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "<h1 align=\"center\"Awesome Codex Skills</h1"
+  },
+  {
     "id": 1190109969,
     "name": "Interview",
     "html_url": "https://github.com/Jamie0807/Interview",
@@ -138,6 +488,20 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
     "readmeSummary": "📚 2026 前端大厂面试题 · 知识点全景总结"
+  },
+  {
+    "id": 1247602853,
+    "name": "rollup-plugin-visualizer",
+    "html_url": "https://github.com/Jamie0807/rollup-plugin-visualizer",
+    "description": "📈⚖️ Visuallize your bundle",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-03-18T12:53:53Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": ""
   },
   {
     "id": 1184021183,
@@ -168,6 +532,20 @@
     "readmeSummary": "本仓库提供了一个小型Python包，用于训练和评估NER模型（BiLSTM和Transformer）。"
   },
   {
+    "id": 1263649422,
+    "name": "Prompt-Engineering-Guide",
+    "html_url": "https://github.com/Jamie0807/Prompt-Engineering-Guide",
+    "description": "🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents.",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-03-11T20:09:13Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "Prompt Engineering Guide"
+  },
+  {
     "id": 1100331013,
     "name": "Tableau",
     "html_url": "https://github.com/Jamie0807/Tableau",
@@ -179,7 +557,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "一个完整的 Tableau 学习项目，包含真实业务场景数据、详细教程和最佳实践指南。适合 Tableau 初学者快速上手，制作专业的动态仪表盘。"
+    "readmeSummary": ""
   },
   {
     "id": 1101145354,
@@ -252,6 +630,20 @@
     "readmeSummary": ""
   },
   {
+    "id": 191685222,
+    "name": "CS-Notes",
+    "html_url": "https://github.com/Jamie0807/CS-Notes",
+    "description": ":books: 技术面试必备基础知识、Leetcode 题解、Java、C++、Python、后端面试、操作系统、计算机网络、系统设计",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": "Java",
+    "pushed_at": "2019-06-13T00:50:42Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "<a href=\"https://gitstarranking.com/repositories\" <img src=\"https://badgen.net/badge/Rank/22?icon=github&color=4ab8a1\"</a"
+  },
+  {
     "id": 183184116,
     "name": "blog",
     "html_url": "https://github.com/Jamie0807/blog",
@@ -264,6 +656,20 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
     "readmeSummary": "使用webpack构建工具，配合react来做一个个人项目。主要是用来学习"
+  },
+  {
+    "id": 183552949,
+    "name": "vuex",
+    "html_url": "https://github.com/Jamie0807/vuex",
+    "description": "🗃️ Centralized State Management for Vue.js.",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": "JavaScript",
+    "pushed_at": "2019-04-11T01:48:38Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "Vuex [](https://circleci.com/gh/vuejs/vuex)"
   },
   {
     "id": 96285431,
@@ -291,7 +697,77 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "vueGame"
+    "readmeSummary": ""
+  },
+  {
+    "id": 183537595,
+    "name": "markdown-intro",
+    "html_url": "https://github.com/Jamie0807/markdown-intro",
+    "description": "Markdown Intro / Markdown 简介",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2018-09-25T02:13:57Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "自从 2014 年左右接触到 Markdown 以来，对它的使用就一发而不可收拾。从最开始使用它在 GitHub Pages 里写博客，到用它编辑项目的 README 文件，再到撰写开发文档，编辑微信公众号文章和邮件内容等等，这期间也见证了它在各类平台和网站上的普及和被原生支持，可以说，Mar..."
+  },
+  {
+    "id": 138996602,
+    "name": "face-api.js",
+    "html_url": "https://github.com/Jamie0807/face-api.js",
+    "description": "JavaScript API for face detection and face recognition in the browser with tensorflow.js",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": "TypeScript",
+    "pushed_at": "2018-06-28T06:57:44Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "JavaScript API for face detection and face recognition in the browser implemented on top of the tensorflow.js core API (tensorflow/tfjscore)"
+  },
+  {
+    "id": 96961445,
+    "name": "vue-element-admin",
+    "html_url": "https://github.com/Jamie0807/vue-element-admin",
+    "description": "vue2.0 admin / a management system template http://panjiachen.github.io/vue-element-admin",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": "Vue",
+    "pushed_at": "2017-07-10T03:12:21Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "本项目的定位是后台集成方案，不适合当基础模板来开发，模板建议使用 vueAdmintemplate"
+  },
+  {
+    "id": 96962295,
+    "name": "Yinyuetai",
+    "html_url": "https://github.com/Jamie0807/Yinyuetai",
+    "description": "下载音乐台MV视频",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": "JavaScript",
+    "pushed_at": "2017-06-15T07:07:47Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "下载音乐台MV视频"
+  },
+  {
+    "id": 98409368,
+    "name": "vue-qqmusic",
+    "html_url": "https://github.com/Jamie0807/vue-qqmusic",
+    "description": "Vue全家桶+Mint-Ui打造高仿QQMusic，搭配详细说明",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": "Vue",
+    "pushed_at": "2017-06-03T17:15:09Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "最近有点小闲置，于是乎希望写点东西，正好自己喜欢听歌，便决定自己写一个QQ音乐的简易版。"
   },
   {
     "id": 83006036,
@@ -376,5 +852,47 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
     "readmeSummary": "Person"
+  },
+  {
+    "id": 97071490,
+    "name": "vuex-demo",
+    "html_url": "https://github.com/Jamie0807/vuex-demo",
+    "description": "一个关于vuex的购物车的DEMO",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": "JavaScript",
+    "pushed_at": "2016-10-23T05:36:39Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "一个关于vuex的购物车的DEMO！！！！！"
+  },
+  {
+    "id": 96961684,
+    "name": "free-programming-books-zh_CN",
+    "html_url": "https://github.com/Jamie0807/free-programming-books-zh_CN",
+    "description": "免费的计算机编程类中文书籍，欢迎投稿",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2015-01-26T05:38:53Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "============================"
+  },
+  {
+    "id": 96961618,
+    "name": "manong",
+    "html_url": "https://github.com/Jamie0807/manong",
+    "description": "码农周刊整理",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": "PHP",
+    "pushed_at": "2014-12-30T02:29:56Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "码农周刊的类别分的比较大，不易于后期查阅，所以我把每期的内容按语言或技术进行了分类整理。"
   }
 ]
