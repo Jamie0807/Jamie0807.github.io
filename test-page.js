@@ -7,6 +7,21 @@ const repos = JSON.parse(fs.readFileSync("data/repos.json", "utf8"));
 assert.match(html, /id="repo-grid"/, "page exposes a repository grid");
 assert.match(html, /id="fork-grid"/, "page exposes a fork repository grid");
 assert.match(html, /Fork 项目/, "page has a separate fork project section");
+assert.match(html, /Apple-inspired portfolio/, "page uses the Apple-style portfolio framing");
+assert.match(html, /she\/her/, "page syncs pronouns from the GitHub profile");
+assert.match(
+  html,
+  /Frontend \| Full-Stack \| Data Science &amp; AI \| University of Liverpool/,
+  "page syncs the GitHub profile bio"
+);
+assert.match(
+  html,
+  /jamiexiaoqianqian@gmail\.com/,
+  "page syncs the GitHub profile email"
+);
+assert.match(html, /jamiexiaoqian/, "page syncs social profile links");
+assert.match(html, /qianqian-xiao/, "page syncs LinkedIn profile");
+assert.match(html, /apple-blue/, "page defines an Apple-style blue accent token");
 assert.match(
   html,
   /https:\/\/api\.github\.com\/users\/Jamie0807\/repos/,
