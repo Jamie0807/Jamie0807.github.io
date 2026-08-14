@@ -7,7 +7,12 @@ const repos = JSON.parse(fs.readFileSync("data/repos.json", "utf8"));
 assert.match(html, /id="repo-grid"/, "page exposes a repository grid");
 assert.match(html, /id="fork-grid"/, "page exposes a fork repository grid");
 assert.match(html, /Fork 项目/, "page has a separate fork project section");
-assert.match(html, /Apple-inspired portfolio/, "page uses the Apple-style portfolio framing");
+assert.match(html, /blog-shell/, "page uses a blog-style shell");
+assert.match(html, /blog-header/, "page uses a compact blog header");
+assert.match(html, /repo-list/, "page uses a blog-style project list");
+assert.match(html, /repo-entry/, "page renders projects as list entries");
+assert.doesNotMatch(html, /class="avatar"/, "blog-style page does not show a profile photo");
+assert.doesNotMatch(html, /id="avatar"/, "blog-style page does not depend on an avatar element");
 assert.match(html, /she\/her/, "page syncs pronouns from the GitHub profile");
 assert.match(
   html,
@@ -21,7 +26,6 @@ assert.match(
 );
 assert.match(html, /jamiexiaoqian/, "page syncs social profile links");
 assert.match(html, /qianqian-xiao/, "page syncs LinkedIn profile");
-assert.match(html, /apple-blue/, "page defines an Apple-style blue accent token");
 assert.match(
   html,
   /https:\/\/api\.github\.com\/users\/Jamie0807\/repos/,

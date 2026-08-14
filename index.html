@@ -11,17 +11,15 @@
     <style>
       :root {
         color-scheme: light;
-        --ink: #1d1d1f;
-        --muted: #6e6e73;
-        --secondary: #424245;
-        --line: #d2d2d7;
-        --paper: #f5f5f7;
-        --panel: rgba(255, 255, 255, 0.86);
-        --apple-blue: #0071e3;
-        --apple-blue-dark: #005bb5;
-        --soft-blue: #e8f2ff;
-        --warm: #bf4800;
-        --shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
+        --ink: #24292f;
+        --muted: #6b7280;
+        --soft: #8b949e;
+        --line: #d8dee4;
+        --paper: #ffffff;
+        --tint: #f6f8fa;
+        --link: #0969da;
+        --accent: #0f766e;
+        --warm: #9a6700;
       }
 
       * {
@@ -39,50 +37,30 @@
       }
 
       a {
-        color: inherit;
+        color: var(--link);
         text-decoration: none;
       }
 
-      .site-shell {
-        width: min(1180px, calc(100% - 40px));
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .blog-shell {
+        width: min(860px, calc(100% - 40px));
         margin: 0 auto;
-        padding: 28px 0 56px;
+        padding: 34px 0 58px;
       }
 
-      .hero {
-        display: grid;
-        grid-template-columns: 184px minmax(0, 1fr);
-        gap: 34px;
-        align-items: stretch;
-        padding: 34px;
-        border: 1px solid rgba(210, 210, 215, 0.72);
-        border-radius: 8px;
-        background: var(--panel);
-        box-shadow: var(--shadow);
-        backdrop-filter: blur(18px);
-      }
-
-      .avatar-wrap {
-        display: flex;
-        align-items: start;
-        justify-content: center;
-      }
-
-      .avatar {
-        width: 184px;
-        height: 184px;
-        border: 1px solid rgba(210, 210, 215, 0.9);
-        border-radius: 8px;
-        object-fit: cover;
-        background: #ffffff;
-        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
+      .blog-header {
+        padding: 8px 0 30px;
+        border-bottom: 1px solid var(--line);
       }
 
       .eyebrow {
-        margin: 0 0 12px;
-        color: var(--apple-blue);
-        font-size: 0.82rem;
-        font-weight: 700;
+        margin: 0 0 10px;
+        color: var(--accent);
+        font-size: 0.78rem;
+        font-weight: 750;
         letter-spacing: 0;
         text-transform: uppercase;
       }
@@ -91,309 +69,261 @@
         display: flex;
         flex-wrap: wrap;
         align-items: baseline;
-        gap: 10px;
+        gap: 8px;
       }
 
       h1 {
         margin: 0;
-        font-size: clamp(3rem, 8vw, 6.8rem);
-        line-height: 0.92;
+        font-size: clamp(2.15rem, 7vw, 3.1rem);
+        line-height: 1.05;
         letter-spacing: 0;
       }
 
       .handle {
         color: var(--muted);
-        font-size: clamp(1.35rem, 3vw, 2.1rem);
+        font-size: clamp(1rem, 3vw, 1.18rem);
         font-weight: 500;
       }
 
       .pronouns {
         color: var(--muted);
-        font-size: clamp(1.1rem, 2vw, 1.35rem);
-        font-weight: 600;
+        font-size: 1rem;
+        font-weight: 500;
       }
 
       .intro {
-        max-width: 820px;
-        margin: 22px 0 0;
+        max-width: 720px;
+        margin: 16px 0 0;
         color: var(--ink);
-        font-size: clamp(1.35rem, 3vw, 2.15rem);
-        font-weight: 700;
-        line-height: 1.22;
+        font-size: clamp(1.08rem, 3vw, 1.35rem);
+        font-weight: 650;
+        line-height: 1.48;
       }
 
       .profile-links {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-        max-width: 760px;
-        margin-top: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        margin-top: 18px;
       }
 
       .profile-link {
-        display: flex;
-        min-height: 44px;
+        display: inline-flex;
         align-items: center;
-        gap: 10px;
-        padding: 11px 12px;
-        border: 1px solid rgba(210, 210, 215, 0.74);
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.72);
-        color: var(--secondary);
-        font-size: 0.96rem;
-        font-weight: 650;
+        gap: 6px;
+        color: var(--muted);
+        font-size: 0.94rem;
+        font-weight: 520;
         overflow-wrap: anywhere;
       }
 
       .profile-link span {
-        color: var(--muted);
-        font-size: 0.82rem;
+        color: var(--soft);
+        font-size: 0.74rem;
         font-weight: 700;
         text-transform: uppercase;
       }
 
       .migration-note {
-        max-width: 760px;
         margin: 18px 0 0;
-        padding: 13px 14px;
-        border: 1px solid rgba(0, 113, 227, 0.22);
-        border-radius: 8px;
-        background: var(--soft-blue);
-        color: var(--apple-blue-dark);
-        font-size: 0.96rem;
-        font-weight: 650;
-        line-height: 1.58;
+        padding-left: 12px;
+        border-left: 3px solid var(--line);
+        color: var(--muted);
+        font-size: 0.94rem;
+        line-height: 1.65;
       }
 
       .migration-note a {
-        color: var(--apple-blue-dark);
-        font-weight: 800;
+        font-weight: 700;
       }
 
       .actions {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        margin-top: 22px;
+        margin-top: 20px;
       }
 
       .button {
         display: inline-flex;
-        min-height: 42px;
+        min-height: 36px;
         align-items: center;
         justify-content: center;
-        padding: 0 16px;
-        border: 1px solid rgba(210, 210, 215, 0.86);
+        padding: 0 12px;
+        border: 1px solid var(--line);
         border-radius: 8px;
-        background: #ffffff;
+        background: var(--tint);
         color: var(--ink);
-        font-weight: 750;
+        font-size: 0.92rem;
+        font-weight: 650;
       }
 
       .button.primary {
-        border-color: var(--apple-blue);
-        background: var(--apple-blue);
-        color: #ffffff;
+        border-color: rgba(15, 118, 110, 0.32);
+        background: rgba(15, 118, 110, 0.08);
+        color: var(--accent);
       }
 
       .section-head {
         display: flex;
-        align-items: end;
+        align-items: baseline;
         justify-content: space-between;
         gap: 20px;
-        margin: 42px 0 16px;
+        margin: 38px 0 4px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--line);
       }
 
       h2 {
         margin: 0;
-        font-size: clamp(1.8rem, 4vw, 3.2rem);
-        line-height: 1.05;
+        font-size: 1.3rem;
+        line-height: 1.3;
         letter-spacing: 0;
       }
 
       .repo-count {
         color: var(--muted);
-        font-size: 0.98rem;
-        font-weight: 650;
+        font-size: 0.9rem;
+        font-weight: 520;
         white-space: nowrap;
       }
 
-      .repo-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 14px;
+      .repo-list {
+        display: block;
       }
 
-      .repo-card {
-        display: flex;
-        min-height: 218px;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 18px;
-        padding: 22px;
-        border: 1px solid rgba(210, 210, 215, 0.74);
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.9);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-        transition:
-          transform 180ms ease,
-          border-color 180ms ease,
-          box-shadow 180ms ease;
+      .repo-entry {
+        display: block;
+        padding: 18px 0 20px;
+        border-bottom: 1px solid var(--line);
+        color: inherit;
+        transition: background 160ms ease;
       }
 
-      .repo-card:hover {
-        transform: translateY(-2px);
-        border-color: rgba(0, 113, 227, 0.44);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.09);
+      .repo-entry:hover {
+        text-decoration: none;
       }
 
-      .repo-card h3 {
-        margin: 0 0 10px;
+      .repo-entry h3 {
+        margin: 0 0 7px;
         overflow-wrap: anywhere;
-        color: var(--ink);
-        font-size: 1.2rem;
+        color: var(--link);
+        font-size: 1.08rem;
+        line-height: 1.35;
         letter-spacing: 0;
       }
 
-      .repo-card p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.56;
+      .repo-entry:hover h3 {
+        text-decoration: underline;
       }
 
-      .repo-meta {
+      .entry-description {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.62;
+      }
+
+      .entry-meta {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
+        gap: 8px 12px;
+        align-items: center;
+        margin-top: 10px;
         color: var(--muted);
-        font-size: 0.9rem;
+        font-size: 0.86rem;
       }
 
       .chip {
         display: inline-flex;
-        min-height: 28px;
+        min-height: 24px;
         align-items: center;
-        padding: 0 10px;
+        padding: 0 8px;
         border-radius: 999px;
-        background: var(--soft-blue);
-        color: var(--apple-blue-dark);
-        font-weight: 750;
+        background: var(--tint);
+        color: var(--accent);
+        font-weight: 700;
       }
 
       .chip.warm {
-        background: #fff3e8;
+        background: #fff8c5;
         color: var(--warm);
       }
 
       .status {
-        padding: 28px;
+        margin-top: 16px;
+        padding: 18px;
         border: 1px dashed var(--line);
         border-radius: 8px;
-        background: rgba(255, 255, 255, 0.72);
+        background: var(--tint);
         color: var(--muted);
         line-height: 1.6;
       }
 
       footer {
-        margin-top: 46px;
-        padding-top: 22px;
+        margin-top: 20px;
+        padding-top: 24px;
         border-top: 1px solid var(--line);
         color: var(--muted);
-        font-size: 0.92rem;
+        font-size: 0.88rem;
       }
 
       @media (max-width: 760px) {
-        .site-shell {
-          width: min(100% - 24px, 1180px);
-          padding-top: 18px;
-        }
-
-        .hero {
-          grid-template-columns: 1fr;
-          gap: 20px;
-          padding: 18px;
-        }
-
-        .avatar-wrap {
-          justify-content: start;
-        }
-
-        .avatar {
-          width: 104px;
-          height: 104px;
-        }
-
-        .identity-line {
-          gap: 6px;
+        .blog-shell {
+          width: min(100% - 28px, 860px);
+          padding-top: 24px;
         }
 
         .profile-links {
-          grid-template-columns: 1fr;
+          flex-direction: column;
         }
 
         .section-head {
           align-items: start;
           flex-direction: column;
-          gap: 8px;
-        }
-
-        .repo-grid {
-          grid-template-columns: 1fr;
+          gap: 4px;
         }
       }
     </style>
   </head>
   <body>
-    <main class="site-shell">
-      <section class="hero" aria-labelledby="page-title">
-        <div class="avatar-wrap">
-          <img
-            class="avatar"
-            id="avatar"
-            src="https://github.com/Jamie0807.png"
-            alt="Jamie0807 GitHub avatar"
-            width="184"
-            height="184"
-          />
+    <main class="blog-shell">
+      <section class="blog-header" aria-labelledby="page-title">
+        <p class="eyebrow">GitHub Portfolio</p>
+        <div class="identity-line">
+          <h1 id="page-title">Jamie</h1>
+          <span class="handle">Jamie0807</span>
+          <span class="pronouns">she/her</span>
         </div>
-        <div>
-          <p class="eyebrow">Apple-inspired portfolio</p>
-          <div class="identity-line">
-            <h1 id="page-title">Jamie</h1>
-            <span class="handle">Jamie0807</span>
-            <span class="pronouns">she/her</span>
-          </div>
-          <p class="intro">Frontend | Full-Stack | Data Science &amp; AI | University of Liverpool</p>
-          <div class="profile-links" aria-label="Profile details">
-            <a class="profile-link" href="mailto:jamiexiaoqianqian@gmail.com">
-              <span>Email</span>
-              jamiexiaoqianqian@gmail.com
-            </a>
-            <a class="profile-link" href="https://jamie0807.github.io/">
-              <span>Site</span>
-              jamie0807.github.io
-            </a>
-            <a class="profile-link" href="https://www.instagram.com/jamiexiaoqian">
-              <span>Instagram</span>
-              jamiexiaoqian
-            </a>
-            <a class="profile-link" href="https://www.threads.net/@jamiexiaoqian">
-              <span>Threads</span>
-              @jamiexiaoqian
-            </a>
-            <a class="profile-link" href="https://www.linkedin.com/in/qianqian-xiao">
-              <span>LinkedIn</span>
-              in/qianqian-xiao
-            </a>
-          </div>
-          <p class="migration-note">
-            部分代码仓库由原账号迁移而来，原账号为
-            <a href="https://github.com/Jamie-qian">@Jamie-qian</a>
-          </p>
-          <div class="actions" aria-label="Profile links">
-            <a class="button primary" href="https://github.com/Jamie0807">GitHub 主页</a>
-            <a class="button" href="https://github.com/Jamie0807?tab=repositories">全部仓库</a>
-          </div>
+        <p class="intro">Frontend | Full-Stack | Data Science &amp; AI | University of Liverpool</p>
+        <div class="profile-links" aria-label="Profile details">
+          <a class="profile-link" href="mailto:jamiexiaoqianqian@gmail.com">
+            <span>Email</span>
+            jamiexiaoqianqian@gmail.com
+          </a>
+          <a class="profile-link" href="https://jamie0807.github.io/">
+            <span>Site</span>
+            jamie0807.github.io
+          </a>
+          <a class="profile-link" href="https://www.instagram.com/jamiexiaoqian">
+            <span>Instagram</span>
+            jamiexiaoqian
+          </a>
+          <a class="profile-link" href="https://www.threads.net/@jamiexiaoqian">
+            <span>Threads</span>
+            @jamiexiaoqian
+          </a>
+          <a class="profile-link" href="https://www.linkedin.com/in/qianqian-xiao">
+            <span>LinkedIn</span>
+            in/qianqian-xiao
+          </a>
+        </div>
+        <p class="migration-note">
+          部分代码仓库由原账号迁移而来，原账号为
+          <a href="https://github.com/Jamie-qian">@Jamie-qian</a>。页面中的项目时间展示为代码实际维护时间。
+        </p>
+        <div class="actions" aria-label="Profile links">
+          <a class="button primary" href="https://github.com/Jamie0807">GitHub 主页</a>
+          <a class="button" href="https://github.com/Jamie0807?tab=repositories">全部仓库</a>
         </div>
       </section>
 
@@ -402,7 +332,7 @@
           <h2 id="repo-title">公开项目</h2>
           <span class="repo-count" id="repo-count">正在加载...</span>
         </div>
-        <div class="repo-grid" id="repo-grid" aria-live="polite">
+        <div class="repo-list" id="repo-grid" aria-live="polite">
           <div class="status">正在从 GitHub 读取项目。</div>
         </div>
       </section>
@@ -412,13 +342,13 @@
           <h2 id="fork-title">Fork 项目</h2>
           <span class="repo-count" id="fork-count">正在加载...</span>
         </div>
-        <div class="repo-grid" id="fork-grid" aria-live="polite">
+        <div class="repo-list" id="fork-grid" aria-live="polite">
           <div class="status">正在从 GitHub 读取 Fork 项目。</div>
         </div>
       </section>
     </main>
 
-    <footer class="site-shell">
+    <footer class="blog-shell">
       <span>Powered by GitHub Pages</span>
     </footer>
 
@@ -428,7 +358,6 @@
       const repoCount = document.querySelector("#repo-count");
       const forkGrid = document.querySelector("#fork-grid");
       const forkCount = document.querySelector("#fork-count");
-      const avatar = document.querySelector("#avatar");
       const repoCacheKey = "jamie0807-public-repos";
       const staticReposUrl = "data/repos.json";
       const apiUrl =
@@ -571,12 +500,12 @@
                 : "";
 
             return `
-              <a class="repo-card" href="${repo.html_url}" aria-label="Open ${escapeHtml(repo.name)} on GitHub">
+              <a class="repo-entry" href="${repo.html_url}" aria-label="Open ${escapeHtml(repo.name)} on GitHub">
                 <div>
                   <h3>${escapeHtml(repo.name)}</h3>
-                  <p>${escapeHtml(description)}</p>
+                  <p class="entry-description">${escapeHtml(description)}</p>
                 </div>
-                <div class="repo-meta">
+                <div class="entry-meta">
                   ${language}
                   ${stars}
                   <span>代码维护于 ${formatDate(repo.pushed_at)}</span>
@@ -632,17 +561,11 @@
 
           const repos = await response.json();
           writeCachedRepos(repos);
-          if (repos[0]?.owner?.avatar_url) {
-            avatar.src = repos[0].owner.avatar_url;
-          }
           renderRepos(await addReadmeSummaries(repos));
         } catch (error) {
           try {
             const staticRepos = await loadStaticRepos();
             writeCachedRepos(staticRepos);
-            if (staticRepos[0]?.owner?.avatar_url) {
-              avatar.src = staticRepos[0].owner.avatar_url;
-            }
             renderRepos(staticRepos);
           } catch (staticError) {
             console.error(staticError);
