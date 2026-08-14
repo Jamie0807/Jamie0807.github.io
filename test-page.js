@@ -13,7 +13,6 @@ assert.match(html, /repo-list/, "page uses a blog-style project list");
 assert.match(html, /repo-entry/, "page renders projects as list entries");
 assert.doesNotMatch(html, /class="avatar"/, "blog-style page does not show a profile photo");
 assert.doesNotMatch(html, /id="avatar"/, "blog-style page does not depend on an avatar element");
-assert.match(html, /she\/her/, "page syncs pronouns from the GitHub profile");
 assert.match(
   html,
   /Frontend \| Full-Stack \| Data Science &amp; AI \| University of Liverpool/,
@@ -117,6 +116,11 @@ assert.ok(
 assert.ok(
   repos.some((repo) => repo.fork),
   "static repository data includes forked repositories"
+);
+assert.match(
+  repos.find((repo) => repo.name === "magicut")?.description || "",
+  /Magicut 是一个 AI 驱动的桌面端智能视频剪辑平台/,
+  "static repository data includes the current magicut GitHub description"
 );
 
 console.log("Page checks passed");

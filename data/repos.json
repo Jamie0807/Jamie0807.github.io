@@ -1,5 +1,103 @@
 [
   {
+    "id": 1321106140,
+    "name": "Jamie0807.github.io",
+    "html_url": "https://github.com/Jamie0807/Jamie0807.github.io",
+    "description": null,
+    "fork": false,
+    "stargazers_count": 0,
+    "language": "HTML",
+    "pushed_at": "2026-08-14T14:51:31Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": ""
+  },
+  {
+    "id": 1334063362,
+    "name": "Vue3",
+    "html_url": "https://github.com/Jamie0807/Vue3",
+    "description": null,
+    "fork": false,
+    "stargazers_count": 0,
+    "language": "Vue",
+    "pushed_at": "2026-08-14T14:32:43Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "一个基于 Vue 3、Vite 和 TypeScript 的前端练习项目，集成了路由、状态管理、单元测试、代码检查和格式化工具。"
+  },
+  {
+    "id": 1333829921,
+    "name": "core",
+    "html_url": "https://github.com/Jamie0807/core",
+    "description": "🖖 Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web.",
+    "fork": true,
+    "stargazers_count": 1,
+    "language": null,
+    "pushed_at": "2026-08-14T01:54:10Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "vuejs/core [](https://www.npmjs.com/package/vue) [](https://github.com/vuejs/core/actions/workflows/ci.yml) [](https://www.npmjs.com/package/vue)"
+  },
+  {
+    "id": 1333245430,
+    "name": "ElectronDemo",
+    "html_url": "https://github.com/Jamie0807/ElectronDemo",
+    "description": null,
+    "fork": false,
+    "stargazers_count": 0,
+    "language": "TypeScript",
+    "pushed_at": "2026-08-13T15:17:46Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": ""
+  },
+  {
+    "id": 1333016749,
+    "name": "electron",
+    "html_url": "https://github.com/Jamie0807/electron",
+    "description": ":electron: Build cross-platform desktop apps with JavaScript, HTML, and CSS",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-08-13T09:25:39Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "[](https://electronjs.org)"
+  },
+  {
+    "id": 1297374731,
+    "name": "magicut",
+    "html_url": "https://github.com/Jamie0807/magicut",
+    "description": "Magicut 是一个 AI 驱动的桌面端智能视频剪辑平台，面向短视频创作者、课程内容创作者和需要快速组织音视频素材的个人工作流。 它把文稿、本地视频素材、口播配音和可编辑时间线串成一条自动化创作流程：用户输入文稿、选择配音音色和本地素材目录后，由桌面端调度视频创作 agent，生成可继续编辑的视频工程",
+    "fork": false,
+    "stargazers_count": 1,
+    "language": "TypeScript",
+    "pushed_at": "2026-08-12T16:04:40Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "Magicut 是一个 AI 驱动的桌面端智能视频剪辑平台，面向短视频创作者、课程内容创作者和需要快速组织音视频素材的个人工作流。"
+  },
+  {
+    "id": 1331944670,
+    "name": "mapbox-gl-js",
+    "html_url": "https://github.com/Jamie0807/mapbox-gl-js",
+    "description": "Interactive, thoroughly customizable maps in the browser, powered by vector tiles and WebGL",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-08-12T10:28:04Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "<img width=\"300\" alt=\"Mapbox logo\" src=\"https://staticassets.mapbox.com/logos/mapboxlogoblack.png\""
+  },
+  {
     "id": 1327661803,
     "name": "React19",
     "html_url": "https://github.com/Jamie0807/React19",
@@ -7,7 +105,7 @@
     "fork": false,
     "stargazers_count": 0,
     "language": "TypeScript",
-    "pushed_at": "2026-08-10T15:32:19Z",
+    "pushed_at": "2026-08-11T15:01:44Z",
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
@@ -28,6 +126,34 @@
     "readmeSummary": "[](https://www.npmjs.com/package/@reduxjs/toolkit)"
   },
   {
+    "id": 1330021129,
+    "name": "mantine",
+    "html_url": "https://github.com/Jamie0807/mantine",
+    "description": "A fully featured React components library",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-08-09T14:58:50Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "[](https://github.com/mantinedev/mantine/blob/master/LICENSE)"
+  },
+  {
+    "id": 1330023022,
+    "name": "hooks",
+    "html_url": "https://github.com/Jamie0807/hooks",
+    "description": "A high-quality & reliable React Hooks library.   https://alibaba.github.io/hooks/",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-08-09T11:13:20Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "<a href=\"https://ahooks.js.org\""
+  },
+  {
     "id": 1329998463,
     "name": "jotai",
     "html_url": "https://github.com/Jamie0807/jotai",
@@ -45,39 +171,11 @@
     "id": 1319816074,
     "name": "AI-Workflow",
     "html_url": "https://github.com/Jamie0807/AI-Workflow",
-    "description": null,
+    "description": "AI Workflow 是一个面向实际业务落地的 AI 工作流开发平台。它提供可视化编排、测试运行、版本发布、API 调用、知识库检索和执行监控能力，用于把 LLM、RAG、HTTP 请求、条件分支和结构化输出组合成可维护、可复用、可集成的自动化流程。",
     "fork": false,
     "stargazers_count": 1,
     "language": "TypeScript",
     "pushed_at": "2026-08-03T12:58:09Z",
-    "owner": {
-      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
-    },
-    "readmeSummary": "AI Workflow 是一个面向实际业务落地的 AI 工作流开发平台。它提供可视化编排、测试运行、版本发布、API 调用、知识库检索和执行监控能力，用于把 LLM、RAG、HTTP 请求、条件分支和结构化输出组合成可维护、可复用、可集成的自动化流程。"
-  },
-  {
-    "id": 1297374731,
-    "name": "magicut",
-    "html_url": "https://github.com/Jamie0807/magicut",
-    "description": null,
-    "fork": false,
-    "stargazers_count": 1,
-    "language": "TypeScript",
-    "pushed_at": "2026-08-03T12:57:54Z",
-    "owner": {
-      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
-    },
-    "readmeSummary": ""
-  },
-  {
-    "id": 1321106140,
-    "name": "Jamie0807.github.io",
-    "html_url": "https://github.com/Jamie0807/Jamie0807.github.io",
-    "description": null,
-    "fork": false,
-    "stargazers_count": 0,
-    "language": "HTML",
-    "pushed_at": "2026-08-03T04:07:10Z",
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
@@ -95,7 +193,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "<a href=\"https://cloud.dify.ai\"Dify Cloud</a ·"
+    "readmeSummary": ""
   },
   {
     "id": 1098919427,
@@ -103,7 +201,7 @@
     "html_url": "https://github.com/Jamie0807/forecasting-uk-ageing-trends",
     "description": null,
     "fork": false,
-    "stargazers_count": 0,
+    "stargazers_count": 1,
     "language": "Python",
     "pushed_at": "2026-07-30T14:59:21Z",
     "owner": {
@@ -124,6 +222,20 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
     "readmeSummary": "<img src=\"./docs/bear.jpg\" /"
+  },
+  {
+    "id": 1330021714,
+    "name": "valtio",
+    "html_url": "https://github.com/Jamie0807/valtio",
+    "description": "🧙 Valtio makes proxy-state simple  for React and Vanilla",
+    "fork": true,
+    "stargazers_count": 0,
+    "language": null,
+    "pushed_at": "2026-07-29T05:41:48Z",
+    "owner": {
+      "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
+    },
+    "readmeSummary": "<img src=\"logo.svg\" alt=\"valtio\""
   },
   {
     "id": 1321099010,
@@ -151,7 +263,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "<img src='assets/indexicon.png' width=\"250\"/"
+    "readmeSummary": ""
   },
   {
     "id": 1297338016,
@@ -187,7 +299,7 @@
     "html_url": "https://github.com/Jamie0807/ai-test",
     "description": null,
     "fork": false,
-    "stargazers_count": 0,
+    "stargazers_count": 1,
     "language": "Shell",
     "pushed_at": "2026-07-07T09:16:40Z",
     "owner": {
@@ -215,7 +327,7 @@
     "html_url": "https://github.com/Jamie0807/team-spec",
     "description": null,
     "fork": false,
-    "stargazers_count": 0,
+    "stargazers_count": 1,
     "language": "Shell",
     "pushed_at": "2026-06-10T15:36:45Z",
     "owner": {
@@ -229,7 +341,7 @@
     "html_url": "https://github.com/Jamie0807/ai-codex",
     "description": null,
     "fork": false,
-    "stargazers_count": 0,
+    "stargazers_count": 1,
     "language": "TypeScript",
     "pushed_at": "2026-06-09T06:18:33Z",
     "owner": {
@@ -249,7 +361,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "<h1 align=\"center\"<img src=\"assets/icon.png\" alt=\"\" width=\"64\" style=\"verticalalign: middle;\"&nbsp; CLIAnything: Making ALL Software AgentNative</h1"
+    "readmeSummary": ""
   },
   {
     "id": 1216617015,
@@ -257,7 +369,7 @@
     "html_url": "https://github.com/Jamie0807/langchain",
     "description": null,
     "fork": false,
-    "stargazers_count": 0,
+    "stargazers_count": 1,
     "language": "TypeScript",
     "pushed_at": "2026-06-03T07:47:35Z",
     "owner": {
@@ -347,7 +459,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": ""
+    "readmeSummary": "<img src=\"https://userimages.githubusercontent.com/8291514/213727234cda046d628c6491ab284b86c5cede25d.pngghlightmodeonly\""
   },
   {
     "id": 1252535043,
@@ -389,7 +501,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "<a href=\"https://www.warp.dev\""
+    "readmeSummary": ""
   },
   {
     "id": 1247564419,
@@ -417,7 +529,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "<a href=\"https://reactnative.dev/\""
+    "readmeSummary": ""
   },
   {
     "id": 1247564742,
@@ -431,7 +543,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "<img src=\"./media/logolarge.webp\" alt=\"Spec Kit Logo\" width=\"200\" height=\"200\"/"
+    "readmeSummary": ""
   },
   {
     "id": 1248082658,
@@ -459,7 +571,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "<a href=\"https://github.com/VoltAgent/voltagent\""
+    "readmeSummary": ""
   },
   {
     "id": 1262827293,
@@ -501,7 +613,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": ""
+    "readmeSummary": "Rollup Plugin Visualizer"
   },
   {
     "id": 1184021183,
@@ -515,7 +627,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "本项目是工单系统 Jamie0807/Ticket 的前端重构版本，基于 Nuxt 2 + Element UI 实现，面向 CRM / SaaS 场景下的客户工单、账号操作、财务事务、数据报告与违规预警等业务。"
+    "readmeSummary": ""
   },
   {
     "id": 1099576610,
@@ -543,7 +655,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "Prompt Engineering Guide"
+    "readmeSummary": ""
   },
   {
     "id": 1100331013,
@@ -557,7 +669,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": ""
+    "readmeSummary": "一个完整的 Tableau 学习项目，包含真实业务场景数据、详细教程和最佳实践指南。适合 Tableau 初学者快速上手，制作专业的动态仪表盘。"
   },
   {
     "id": 1101145354,
@@ -613,7 +725,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "▪️ 这里是 vuecli 的文档 👉 See VueCLI 文档."
+    "readmeSummary": ""
   },
   {
     "id": 191699655,
@@ -697,7 +809,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": ""
+    "readmeSummary": "vueGame"
   },
   {
     "id": 183537595,
@@ -753,7 +865,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "下载音乐台MV视频"
+    "readmeSummary": ""
   },
   {
     "id": 98409368,
@@ -767,7 +879,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "最近有点小闲置，于是乎希望写点东西，正好自己喜欢听歌，便决定自己写一个QQ音乐的简易版。"
+    "readmeSummary": ""
   },
   {
     "id": 83006036,
@@ -893,6 +1005,6 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "码农周刊的类别分的比较大，不易于后期查阅，所以我把每期的内容按语言或技术进行了分类整理。"
+    "readmeSummary": ""
   }
 ]
