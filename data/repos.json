@@ -109,7 +109,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "这是一个使用 pnpm create vite 创建的 React 学习项目，技术栈为 React、TypeScript 和 Vite。项目主要用于练习 React 的基础组件写法、Hooks、React 18 新增能力、React 19 新增能力、ref、Suspense、memo、数据请求..."
+    "readmeSummary": "这是一个使用 pnpm create vite 创建的 React 学习项目，技术栈为 React、TypeScript 和 Vite。项目主要用于练习 React 的基础组件写法、Hooks、React 18 新增能力、React 19 新增能力、ref、Suspense、memo、数据请求和状态管理等常见内容。"
   },
   {
     "id": 1329997873,
@@ -277,7 +277,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "Superpowers is a complete software development methodology for your coding agents, built on top of a set of composable skills and some initial inst..."
+    "readmeSummary": "Superpowers is a complete software development methodology for your coding agents, built on top of a set of composable skills and some initial instructions that make sure your agent uses them."
   },
   {
     "id": 1292577798,
@@ -319,7 +319,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "A curated collection of Agent Skills reflecting Anthony Fu's preferences, experience, and best practices, along with usage documentation for the to..."
+    "readmeSummary": "A curated collection of Agent Skills reflecting Anthony Fu's preferences, experience, and best practices, along with usage documentation for the tools."
   },
   {
     "id": 1263725962,
@@ -333,7 +333,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "基于 React 19、Vite、TypeScript 和 Tailwind CSS 的前端项目，并已接入"
+    "readmeSummary": "基于 React 19、Vite、TypeScript 和 Tailwind CSS 的前端项目，并已接入 GitHub Spec Kit 与 Codex Skills，用于按“规范先行”的方式开发功能。"
   },
   {
     "id": 1262100654,
@@ -473,7 +473,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "React &middot; [](https://github.com/facebook/react/blob/main/LICENSE) [](https://www.npmjs.com/package/react) [](https://github.com/facebook/react..."
+    "readmeSummary": "React &middot; [](https://github.com/facebook/react/blob/main/LICENSE) [](https://www.npmjs.com/package/react) [](https://github.com/facebook/react/actions/workflows/runtimebuildandtest.yml) [](https://github.com/facebook/react/actions/workflows/compilertypescript.yml) [](https://legacy.reactjs.org/docs/howtocontribute.htmlyourfirstpullrequest)"
   },
   {
     "id": 1251985338,
@@ -823,7 +823,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "自从 2014 年左右接触到 Markdown 以来，对它的使用就一发而不可收拾。从最开始使用它在 GitHub Pages 里写博客，到用它编辑项目的 README 文件，再到撰写开发文档，编辑微信公众号文章和邮件内容等等，这期间也见证了它在各类平台和网站上的普及和被原生支持，可以说，Mar..."
+    "readmeSummary": "自从 2014 年左右接触到 Markdown 以来，对它的使用就一发而不可收拾。从最开始使用它在 GitHub Pages 里写博客，到用它编辑项目的 README 文件，再到撰写开发文档，编辑微信公众号文章和邮件内容等等，这期间也见证了它在各类平台和网站上的普及和被原生支持，可以说，Markdown 如今已经渗透了我在技术和网络活动的方方面面，成为了我撰写文本文档的首选。"
   },
   {
     "id": 138996602,
@@ -907,7 +907,7 @@
     "owner": {
       "avatar_url": "https://avatars.githubusercontent.com/u/188891365?v=4"
     },
-    "readmeSummary": "SPA是Single Page App的缩写，意思是单页面应用，指的不是本地应用，而是网站。传统的网站都是多页面的，每次点击一个链接就会打开一个新的页面。但是 SPA 是“单页面”的，意思是一旦我打开这个网站，这个“页面”就会一次性的下载到本地。SPA 页面给用户最直观的一个感受是，每次点击一..."
+    "readmeSummary": "footballApp SPA简述 一、简介 SPA是Single Page App的缩写，意思是单页面应用，指的不是本地应用，而是网站。传统的网站都是多页面的，每次点击一个链接就会打开一个新的页面。但是 SPA 是“单页面”的，意思是一旦我打开这个网站，这个“页面”就会一次性的下载到本地。SPA 页面给用户最直观的一个感受是，每次点击一个链接，页面是不会刷新的。所以用户体验更接近于本地应用，舒适感提高很多。需要注意的是，这里所谓的“单页面”指的是技术底层网站只有一个页面，但是从显示内容角度而言，一个 SPA 仍然可以展示多页内容的。 二、为啥要写 SPA ？ 学习 SPA 有那些好处 ？直接点说，就是为了让用户更高一层的获得体验。SPA 应用的特点是一次性的把页面显示逻辑都加载到了本地浏览器中，以后每次请求，服务器那边都是提供新的数据，而不再向以往一样传送 HTML 。所以，每次点一个链接，页面上能看到的是显示加载数据的转来转去小圈圈，而不是页面整个刷新，闪我们一下。这个逻辑其实跟用 C++ 写的桌面应用，Swift 和 Java 写的 ios 和安卓 APP 一样了。 这种类原生应用的体验无疑是更好的用户体验，所以像 Facebook Twitter 这样的大公司多年来都通过各种复杂的技术来达成类似这样的效果。那么，用户用了这些网站，他们对其他应用的用户体验的要求也就会水涨船高。未来如果你的网站，不能做出这样“无刷新”的效果，用户就会觉得你很 Low 了。 各种为 SPA 而生的框架 最早大公司达成 SPA 效果，都是手工打造，用很复杂的手段来实现。随着 SPA 的流行，诞生了一些框架，让开发 SPA 变得简单。 这一类的框架比较知名的有 AngularJS, Ember.js, ExtJS 还有 facebook 的 React ，国人尤小右开发的 vue.js 。 上面这些都是前端框架，还有一个奇葩就是 meteorjs 。这个是个全栈框架，但是也是用来写 SPA 应用的。 AngularJS 和 Ember.js 都比较复杂，学习曲线陡峭。 Vue.js 其实和 React 非常像（其实 vue.js 实现很多想法要比 react 还要早，目前 react 大火，所以 vue 的作者很多方面也都在向 react 看齐）。Vue 的好处是简单高效，但是毕竟 react 社区最为火爆，资源最多，同时又比 Angular 和 Ember 容易上手。 三、特点 速度：更好的用户体验，让用户在web app感受native app的速度和流畅， MVC：经典MVC开发模式，前后端各负其责。 ajax：重前端，业务逻辑全部在本地操作，数据都需要通过AJAX同步、提交。 路由：在URL中采用号来作为当前视图的地址,改变号后的参数，页面并不会重载。"
   },
   {
     "id": 77575436,

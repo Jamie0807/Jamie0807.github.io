@@ -351,7 +351,7 @@
       const repoCount = document.querySelector("#repo-count");
       const forkGrid = document.querySelector("#fork-grid");
       const forkCount = document.querySelector("#fork-count");
-      const repoCacheKey = "jamie0807-public-repos";
+      const repoCacheKey = "jamie0807-public-repos-v2";
       const staticReposUrl = "data/repos.json";
       const apiUrl =
         "https://api.github.com/users/Jamie0807/repos?sort=pushed&per_page=100";
@@ -374,28 +374,36 @@
       }
 
       function getReadmeSummary(markdown) {
-        const lines = markdown
+        const paragraphs = markdown
           .replaceAll("\r\n", "\n")
-          .split("\n")
-          .map((line) =>
-            line
-              .replace(/^#{1,6}\s+/, "")
-              .replace(/!\[[^\]]*\]\([^)]+\)/g, "")
-              .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
-              .replace(/[*_`>#-]/g, "")
+          .split(/\n\s*\n/)
+          .map((paragraph) =>
+            paragraph
+              .split("\n")
+              .map((line) =>
+                line
+                  .replace(/^#{1,6}\s+/, "")
+                  .replace(/!\[[^\]]*\]\([^)]+\)/g, "")
+                  .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+                  .replace(/<[^>]+>/g, "")
+                  .replace(/[*_`>#-]/g, "")
+                  .trim()
+              )
+              .filter(Boolean)
+              .join(" ")
+              .replace(/\s+/g, " ")
               .trim()
           )
           .filter(Boolean);
 
-        const firstTextLine = lines.find((line) => line.length > 20) || lines[0];
+        const firstParagraph =
+          paragraphs.find((paragraph) => paragraph.length > 20) || paragraphs[0];
 
-        if (!firstTextLine) {
+        if (!firstParagraph) {
           return "";
         }
 
-        return firstTextLine.length > 150
-          ? `${firstTextLine.slice(0, 147)}...`
-          : firstTextLine;
+        return firstParagraph;
       }
 
       function decodeBase64Content(content) {

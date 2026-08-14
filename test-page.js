@@ -15,7 +15,7 @@ assert.doesNotMatch(html, /class="avatar"/, "blog-style page does not show a pro
 assert.doesNotMatch(html, /id="avatar"/, "blog-style page does not depend on an avatar element");
 assert.match(
   html,
-  /Frontend \| Full-Stack \| Data Science &amp; AI \| University of Liverpool/,
+  /Frontend \| Full-Stack \| Data Science &amp; (AI|Artificial Intelligence \| Agent) \| University of Liverpool/,
   "page syncs the GitHub profile bio"
 );
 assert.match(
@@ -121,6 +121,15 @@ assert.match(
   repos.find((repo) => repo.name === "magicut")?.description || "",
   /Magicut 是一个 AI 驱动的桌面端智能视频剪辑平台/,
   "static repository data includes the current magicut GitHub description"
+);
+assert.ok(
+  repos.every((repo) => !repo.readmeSummary || !repo.readmeSummary.endsWith("...")),
+  "static README summaries should not be truncated with an ellipsis"
+);
+assert.doesNotMatch(
+  repos.find((repo) => repo.name === "team-spec")?.readmeSummary || "",
+  /并已接入$/,
+  "team-spec README summary should include the full first paragraph, not a partial line"
 );
 
 console.log("Page checks passed");
