@@ -11,6 +11,16 @@ assert.match(html, /blog-shell/, "page uses a blog-style shell");
 assert.match(html, /blog-header/, "page uses a compact blog header");
 assert.match(html, /repo-list/, "page uses a blog-style project list");
 assert.match(html, /repo-entry/, "page renders projects as list entries");
+assert.match(html, /journal-shell/, "page uses the Pencil journal shell");
+assert.match(html, /site-nav/, "page includes the Pencil-style top navigation");
+assert.match(html, /hero-kicker/, "page includes a compact editorial hero label");
+assert.match(html, /hero-title/, "page uses an editorial hero title");
+assert.match(html, /featured-grid/, "page includes featured project cards");
+assert.match(html, /archive-grid/, "page includes the readme/repo archive grid");
+assert.match(html, /contact-strip/, "page includes the final contact section");
+assert.match(html, /Playfair Display/, "page uses the Pencil heading font");
+assert.match(html, /#F5F3EE/i, "page uses the Pencil warm paper background");
+assert.match(html, /#2D5E3A/i, "page uses the Pencil green accent");
 assert.doesNotMatch(html, /class="avatar"/, "blog-style page does not show a profile photo");
 assert.doesNotMatch(html, /id="avatar"/, "blog-style page does not depend on an avatar element");
 assert.match(

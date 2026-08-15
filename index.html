@@ -5,348 +5,607 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Jamie0807 的 GitHub 项目展示主页，自动展示公开仓库。"
+      content="Jamie0807 的 GitHub 个人博客主页，自动展示公开仓库、精选项目和 Fork 项目。"
     />
-    <title>Jamie0807 | GitHub Projects</title>
+    <title>Jamie0807 | GitHub Personal Blog</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23F5F3EE'/%3E%3Cpath d='M18 42c13 0 23-10 23-23 6 5 9 13 7 21-2 10-11 17-22 17-6 0-12-2-16-6 3-1 6-4 8-9Z' fill='%232D5E3A'/%3E%3C/svg%3E"
+    />
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
+
       :root {
         color-scheme: light;
-        --ink: #24292f;
-        --muted: #6b7280;
-        --soft: #8b949e;
-        --line: #d8dee4;
-        --paper: #ffffff;
-        --tint: #f6f8fa;
-        --link: #0969da;
-        --accent: #0f766e;
-        --warm: #9a6700;
+        --paper: #F5F3EE;
+        --surface: #FBFAF6;
+        --surface-soft: #EEF2E8;
+        --leaf: #2D5E3A;
+        --leaf-deep: #1B3A28;
+        --leaf-muted: #4A6B52;
+        --sage: #7A9A80;
+        --line: #D6DDD0;
+        --warm: #F1E7C0;
+        --gold: #9A6B1F;
+        --shadow: rgba(45, 94, 58, 0.08);
       }
 
       * {
         box-sizing: border-box;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
         min-height: 100vh;
-        background: var(--paper);
-        color: var(--ink);
-        font-family:
-          -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+        background:
+          linear-gradient(180deg, rgba(200, 219, 188, 0.28), transparent 360px),
+          var(--paper);
+        color: var(--leaf-deep);
+        font-family: "Geist", -apple-system, BlinkMacSystemFont, "SF Pro Text",
           "Helvetica Neue", Arial, sans-serif;
       }
 
       a {
-        color: var(--link);
+        color: inherit;
         text-decoration: none;
       }
 
       a:hover {
         text-decoration: underline;
+        text-underline-offset: 4px;
       }
 
+      .journal-shell,
       .blog-shell {
-        width: min(860px, calc(100% - 40px));
+        width: min(1160px, calc(100% - 44px));
         margin: 0 auto;
-        padding: 34px 0 58px;
+      }
+
+      .site-nav {
+        position: sticky;
+        top: 18px;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+        width: min(760px, calc(100% - 44px));
+        min-height: 64px;
+        margin: 32px auto 0;
+        padding: 10px 14px 10px 22px;
+        border: 1px solid rgba(214, 221, 208, 0.9);
+        border-radius: 8px;
+        background: rgba(251, 250, 246, 0.86);
+        box-shadow: 0 16px 40px var(--shadow);
+        backdrop-filter: blur(18px);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--leaf-deep);
+        font-weight: 700;
+      }
+
+      .brand-mark {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--leaf);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        color: var(--leaf-muted);
+        font-size: 0.88rem;
+        font-weight: 600;
+      }
+
+      .nav-button,
+      .button {
+        display: inline-flex;
+        min-height: 36px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 14px;
+        border: 1px solid var(--leaf);
+        border-radius: 999px;
+        background: var(--leaf);
+        color: #fff;
+        font-size: 0.86rem;
+        font-weight: 700;
+      }
+
+      .button.secondary {
+        border-color: var(--line);
+        background: transparent;
+        color: var(--leaf);
       }
 
       .blog-header {
-        padding: 8px 0 30px;
-        border-bottom: 1px solid var(--line);
+        padding: 64px 0 36px;
       }
 
-      .eyebrow {
-        margin: 0 0 10px;
-        color: var(--accent);
-        font-size: 0.78rem;
-        font-weight: 750;
-        letter-spacing: 0;
-        text-transform: uppercase;
+      .hero {
+        width: min(930px, 100%);
+        margin: 0 auto;
+        text-align: center;
       }
 
-      .identity-line {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        gap: 8px;
-      }
-
-      h1 {
+      .hero-kicker,
+      .eyebrow,
+      .section-kicker {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 32px;
         margin: 0;
-        font-size: clamp(2.15rem, 7vw, 3.1rem);
-        line-height: 1.05;
-        letter-spacing: 0;
+        padding: 0 16px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(251, 250, 246, 0.72);
+        color: var(--leaf);
+        font-size: 0.78rem;
+        font-weight: 700;
       }
 
-      .handle {
-        color: var(--muted);
-        font-size: clamp(1rem, 3vw, 1.18rem);
-        font-weight: 500;
-      }
-
-      .pronouns {
-        color: var(--muted);
-        font-size: 1rem;
-        font-weight: 500;
+      .hero-title {
+        margin: 18px auto 0;
+        max-width: 900px;
+        color: var(--leaf-deep);
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 4.2rem;
+        font-weight: 700;
+        line-height: 0.98;
       }
 
       .intro {
-        max-width: 720px;
-        margin: 16px 0 0;
-        color: var(--ink);
-        font-size: clamp(1.08rem, 3vw, 1.35rem);
-        font-weight: 650;
-        line-height: 1.48;
+        max-width: 700px;
+        margin: 24px auto 0;
+        color: var(--leaf-muted);
+        font-size: 1.08rem;
+        font-weight: 500;
+        line-height: 1.7;
       }
 
       .profile-links {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px 16px;
-        margin-top: 18px;
+        justify-content: center;
+        gap: 10px 14px;
+        margin-top: 26px;
       }
 
       .profile-link {
         display: inline-flex;
         align-items: center;
-        gap: 6px;
-        color: var(--muted);
-        font-size: 0.94rem;
-        font-weight: 520;
+        gap: 7px;
+        color: var(--leaf-muted);
+        font-size: 0.9rem;
+        font-weight: 600;
         overflow-wrap: anywhere;
       }
 
       .profile-link span {
-        color: var(--soft);
-        font-size: 0.74rem;
+        color: var(--sage);
+        font-size: 0.72rem;
         font-weight: 700;
         text-transform: uppercase;
       }
 
       .migration-note {
-        margin: 18px 0 0;
-        padding-left: 12px;
-        border-left: 3px solid var(--line);
-        color: var(--muted);
-        font-size: 0.94rem;
+        width: min(720px, 100%);
+        margin: 24px auto 0;
+        padding: 14px 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(251, 250, 246, 0.6);
+        color: var(--leaf-muted);
+        font-size: 0.92rem;
         line-height: 1.65;
       }
 
       .migration-note a {
+        color: var(--leaf);
         font-weight: 700;
       }
 
       .actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 20px;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 22px;
       }
 
-      .button {
-        display: inline-flex;
-        min-height: 36px;
-        align-items: center;
-        justify-content: center;
-        padding: 0 12px;
+      .mini-panels {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin: 36px auto 0;
+        width: min(930px, 100%);
+      }
+
+      .note-card {
+        padding: 18px;
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: var(--tint);
-        color: var(--ink);
-        font-size: 0.92rem;
-        font-weight: 650;
+        background: rgba(251, 250, 246, 0.78);
       }
 
-      .button.primary {
-        border-color: rgba(15, 118, 110, 0.32);
-        background: rgba(15, 118, 110, 0.08);
-        color: var(--accent);
+      .note-card h2,
+      .note-card h3 {
+        margin: 0 0 8px;
+        color: var(--leaf-deep);
+        font-size: 1rem;
+      }
+
+      .note-card p {
+        margin: 0;
+        color: var(--leaf-muted);
+        font-size: 0.92rem;
+        line-height: 1.65;
+      }
+
+      .section-block {
+        padding: 58px 0 0;
       }
 
       .section-head {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        gap: 20px;
-        margin: 38px 0 4px;
-        padding-bottom: 12px;
-        border-bottom: 1px solid var(--line);
+        width: min(780px, 100%);
+        margin: 0 auto 26px;
+        text-align: center;
       }
 
-      h2 {
-        margin: 0;
-        font-size: 1.3rem;
-        line-height: 1.3;
-        letter-spacing: 0;
+      .section-head h2 {
+        margin: 12px 0 0;
+        color: var(--leaf-deep);
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 2.3rem;
+        line-height: 1.08;
+      }
+
+      .section-head p {
+        margin: 12px auto 0;
+        max-width: 680px;
+        color: var(--leaf-muted);
+        line-height: 1.7;
       }
 
       .repo-count {
-        color: var(--muted);
+        display: block;
+        margin-top: 12px;
+        color: var(--sage);
         font-size: 0.9rem;
-        font-weight: 520;
-        white-space: nowrap;
+        font-weight: 600;
       }
 
-      .repo-list {
-        display: block;
+      .featured-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
       }
 
+      .featured-card,
       .repo-entry {
-        display: block;
-        padding: 18px 0 20px;
-        border-bottom: 1px solid var(--line);
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(251, 250, 246, 0.78);
         color: inherit;
-        transition: background 160ms ease;
+        box-shadow: 0 16px 36px rgba(45, 94, 58, 0.05);
       }
 
+      .featured-card {
+        min-height: 220px;
+        padding: 24px;
+      }
+
+      .featured-card:hover,
       .repo-entry:hover {
+        border-color: rgba(45, 94, 58, 0.45);
         text-decoration: none;
       }
 
+      .featured-card h3,
       .repo-entry h3 {
-        margin: 0 0 7px;
+        margin: 0;
         overflow-wrap: anywhere;
-        color: var(--link);
-        font-size: 1.08rem;
+        color: var(--leaf-deep);
+        font-size: 1.15rem;
         line-height: 1.35;
-        letter-spacing: 0;
       }
 
-      .repo-entry:hover h3 {
-        text-decoration: underline;
+      .featured-card h3 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1.7rem;
       }
 
       .entry-description {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.62;
+        margin: 12px 0 0;
+        color: var(--leaf-muted);
+        line-height: 1.65;
       }
 
       .entry-meta {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px 12px;
+        gap: 8px 10px;
         align-items: center;
-        margin-top: 10px;
-        color: var(--muted);
-        font-size: 0.86rem;
+        margin-top: 18px;
+        color: var(--sage);
+        font-size: 0.82rem;
+        font-weight: 600;
       }
 
       .chip {
         display: inline-flex;
-        min-height: 24px;
+        min-height: 25px;
         align-items: center;
-        padding: 0 8px;
+        padding: 0 10px;
         border-radius: 999px;
-        background: var(--tint);
-        color: var(--accent);
+        background: var(--surface-soft);
+        color: var(--leaf);
         font-weight: 700;
       }
 
       .chip.warm {
-        background: #fff8c5;
-        color: var(--warm);
+        background: var(--warm);
+        color: var(--gold);
+      }
+
+      .archive-grid,
+      .repo-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .repo-entry {
+        min-height: 184px;
+        padding: 22px;
+      }
+
+      .repo-entry.compact {
+        min-height: 150px;
+      }
+
+      .repo-entry.compact .entry-description {
+        font-size: 0.9rem;
       }
 
       .status {
-        margin-top: 16px;
-        padding: 18px;
+        grid-column: 1 / -1;
+        padding: 22px;
         border: 1px dashed var(--line);
         border-radius: 8px;
-        background: var(--tint);
-        color: var(--muted);
-        line-height: 1.6;
+        background: rgba(251, 250, 246, 0.76);
+        color: var(--leaf-muted);
+        line-height: 1.65;
+      }
+
+      .contact-strip {
+        margin: 64px auto 0;
+        padding: 44px 28px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(200, 219, 188, 0.3);
+        text-align: center;
+      }
+
+      .contact-strip h2 {
+        margin: 0;
+        color: var(--leaf-deep);
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 2.1rem;
+        line-height: 1.15;
+      }
+
+      .contact-strip p {
+        max-width: 620px;
+        margin: 14px auto 0;
+        color: var(--leaf-muted);
+        line-height: 1.7;
+      }
+
+      .contact-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 24px;
       }
 
       footer {
-        margin-top: 20px;
-        padding-top: 24px;
-        border-top: 1px solid var(--line);
-        color: var(--muted);
-        font-size: 0.88rem;
+        padding: 34px 0 48px;
+        color: var(--sage);
+        font-size: 0.86rem;
+        text-align: center;
       }
 
-      @media (max-width: 760px) {
+      @media (max-width: 900px) {
+        .site-nav {
+          position: static;
+          width: min(100% - 28px, 760px);
+          margin-top: 20px;
+        }
+
+        .hero-title {
+          font-size: 3rem;
+        }
+
+        .featured-grid,
+        .archive-grid,
+        .repo-list {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .journal-shell,
         .blog-shell {
-          width: min(100% - 28px, 860px);
-          padding-top: 24px;
+          width: min(100% - 28px, 1160px);
         }
 
-        .profile-links {
+        .site-nav {
+          align-items: flex-start;
           flex-direction: column;
+          gap: 14px;
         }
 
-        .section-head {
-          align-items: start;
-          flex-direction: column;
-          gap: 4px;
+        .nav-links {
+          width: 100%;
+          justify-content: space-between;
+          gap: 12px;
+        }
+
+        .blog-header {
+          padding-top: 44px;
+        }
+
+        .hero-title {
+          font-size: 2.4rem;
+        }
+
+        .mini-panels,
+        .featured-grid,
+        .archive-grid,
+        .repo-list {
+          grid-template-columns: 1fr;
+        }
+
+        .section-head h2 {
+          font-size: 1.9rem;
         }
       }
     </style>
   </head>
   <body>
-    <main class="blog-shell">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Jamie0807 Journal</span>
+      </a>
+      <div class="nav-links">
+        <a href="#featured">Featured</a>
+        <a href="#repos">Projects</a>
+        <a href="#forks">Forks</a>
+        <a class="nav-button" href="https://github.com/Jamie0807">GitHub</a>
+      </div>
+    </nav>
+
+    <main id="top" class="journal-shell blog-shell">
       <section class="blog-header" aria-labelledby="page-title">
-        <p class="eyebrow">GitHub Portfolio</p>
-        <div class="identity-line">
-          <h1 id="page-title">Jamie</h1>
+        <div class="hero">
+          <p class="hero-kicker eyebrow">Personal GitHub Journal</p>
+          <h1 id="page-title" class="hero-title">
+            Jamie keeps a public journal of code, data, and AI experiments.
+          </h1>
+          <p class="intro">
+            Frontend | Full-Stack | Data Science &amp; Artificial Intelligence | Agent | University of Liverpool
+          </p>
+          <div class="profile-links" aria-label="Profile details">
+            <a class="profile-link" href="mailto:jamiexiaoqianqian@gmail.com">
+              <span>Email</span>
+              jamiexiaoqianqian@gmail.com
+            </a>
+            <a class="profile-link" href="https://www.instagram.com/jamiexiaoqian">
+              <span>Instagram</span>
+              jamiexiaoqian
+            </a>
+            <a class="profile-link" href="https://www.threads.net/@jamiexiaoqian">
+              <span>Threads</span>
+              @jamiexiaoqian
+            </a>
+            <a class="profile-link" href="https://www.linkedin.com/in/qianqian-xiao">
+              <span>LinkedIn</span>
+              in/qianqian-xiao
+            </a>
+          </div>
+          <p class="migration-note">
+            部分代码仓库由原账号迁移而来，原账号为
+            <a href="https://github.com/Jamie-qian">@Jamie-qian</a>。页面中的维护时间优先展示代码实际推送时间。
+          </p>
+          <div class="actions" aria-label="Profile links">
+            <a class="button" href="https://github.com/Jamie0807">Visit GitHub</a>
+            <a class="button secondary" href="#repos">Read the archive</a>
+          </div>
         </div>
-        <p class="intro">Frontend | Full-Stack | Data Science &amp; Artificial Intelligence | Agent | University of Liverpool</p>
-        <div class="profile-links" aria-label="Profile details">
-          <a class="profile-link" href="mailto:jamiexiaoqianqian@gmail.com">
-            <span>Email</span>
-            jamiexiaoqianqian@gmail.com
-          </a>
-          <a class="profile-link" href="https://www.instagram.com/jamiexiaoqian">
-            <span>Instagram</span>
-            jamiexiaoqian
-          </a>
-          <a class="profile-link" href="https://www.threads.net/@jamiexiaoqian">
-            <span>Threads</span>
-            @jamiexiaoqian
-          </a>
-          <a class="profile-link" href="https://www.linkedin.com/in/qianqian-xiao">
-            <span>LinkedIn</span>
-            in/qianqian-xiao
-          </a>
-        </div>
-        <p class="migration-note">
-          部分代码仓库由原账号迁移而来，原账号为
-          <a href="https://github.com/Jamie-qian">@Jamie-qian</a>。
-        </p>
-        <div class="actions" aria-label="Profile links">
-          <a class="button primary" href="https://github.com/Jamie0807">GitHub 主页</a>
+
+        <div class="mini-panels" aria-label="Profile notes">
+          <article class="note-card">
+            <h2>Current lens</h2>
+            <p>Building AI workflow and agent-oriented products with a practical frontend and full-stack foundation.</p>
+          </article>
+          <article class="note-card">
+            <h2>What this page tracks</h2>
+            <p>Public repositories, README summaries, project languages, stars, forks, and the latest code maintenance dates.</p>
+          </article>
         </div>
       </section>
 
-      <section aria-labelledby="repo-title">
+      <section class="section-block" id="featured" aria-labelledby="featured-title">
         <div class="section-head">
+          <p class="section-kicker">Featured Notes</p>
+          <h2 id="featured-title">From Repository Studies to Readable Picks</h2>
+          <p>Selected original projects are shown first, then the full public archive follows below.</p>
+        </div>
+        <div class="featured-grid" id="featured-grid" aria-live="polite">
+          <div class="status">正在从 GitHub 读取精选项目。</div>
+        </div>
+      </section>
+
+      <section class="section-block" id="repos" aria-labelledby="repo-title">
+        <div class="section-head">
+          <p class="section-kicker">Repository Field Notes</p>
           <h2 id="repo-title">公开项目</h2>
+          <p>Original repositories are sorted by the latest code push, so migrated projects do not look newer just because metadata changed.</p>
           <span class="repo-count" id="repo-count">正在加载...</span>
         </div>
-        <div class="repo-list" id="repo-grid" aria-live="polite">
+        <div class="archive-grid repo-list" id="repo-grid" aria-live="polite">
           <div class="status">正在从 GitHub 读取项目。</div>
         </div>
       </section>
 
-      <section aria-labelledby="fork-title">
+      <section class="section-block" id="forks" aria-labelledby="fork-title">
         <div class="section-head">
+          <p class="section-kicker">Read Later Library</p>
           <h2 id="fork-title">Fork 项目</h2>
+          <p>Forked repositories are kept separate from original work, like a reading shelf for frameworks, tools, and reference projects.</p>
           <span class="repo-count" id="fork-count">正在加载...</span>
         </div>
-        <div class="repo-list" id="fork-grid" aria-live="polite">
+        <div class="archive-grid repo-list" id="fork-grid" aria-live="polite">
           <div class="status">正在从 GitHub 读取 Fork 项目。</div>
+        </div>
+      </section>
+
+      <section class="contact-strip" aria-labelledby="contact-title">
+        <h2 id="contact-title">From the field notebook into a build.</h2>
+        <p>Follow the portfolio, browse the GitHub profile, or reach out directly when a project needs a second pair of curious eyes.</p>
+        <div class="contact-links">
+          <a class="button" href="mailto:jamiexiaoqianqian@gmail.com">Email Jamie</a>
+          <a class="button secondary" href="https://github.com/Jamie0807?tab=repositories">All repositories</a>
         </div>
       </section>
     </main>
 
-    <footer class="blog-shell">
+    <footer class="journal-shell blog-shell">
       <span>Powered by GitHub Pages</span>
     </footer>
 
     <script>
       const userName = "Jamie0807";
+      const featuredGrid = document.querySelector("#featured-grid");
       const repoGrid = document.querySelector("#repo-grid");
       const repoCount = document.querySelector("#repo-count");
       const forkGrid = document.querySelector("#fork-grid");
@@ -478,11 +737,54 @@
 
         return repos.map((repo) => ({
           ...repo,
-          readmeSummary: summaryByRepoId.get(repo.id) || "",
+          readmeSummary: summaryByRepoId.get(repo.id) || repo.readmeSummary || "",
         }));
       }
 
-      function renderRepoCards(targetGrid, repos, emptyMessage) {
+      function renderMeta(repo) {
+        const language = repo.language
+          ? `<span class="chip">${escapeHtml(repo.language)}</span>`
+          : "";
+        const stars =
+          repo.stargazers_count > 0
+            ? `<span class="chip warm">Stars ${repo.stargazers_count}</span>`
+            : "";
+
+        return `
+          <div class="entry-meta">
+            ${language}
+            ${stars}
+            <span>代码维护于 ${formatDate(repo.pushed_at)}</span>
+          </div>
+        `;
+      }
+
+      function renderFeaturedRepos(repos) {
+        const featuredRepos = repos.slice(0, 2);
+
+        if (featuredRepos.length === 0) {
+          featuredGrid.innerHTML = '<div class="status">暂时没有可展示的精选项目。</div>';
+          return;
+        }
+
+        featuredGrid.innerHTML = featuredRepos
+          .map((repo) => {
+            const description = repo.description || repo.readmeSummary || "这个项目还没有填写简介。";
+
+            return `
+              <a class="featured-card" href="${repo.html_url}" aria-label="Open ${escapeHtml(repo.name)} on GitHub">
+                <div>
+                  <h3>${escapeHtml(repo.name)}</h3>
+                  <p class="entry-description">${escapeHtml(description)}</p>
+                </div>
+                ${renderMeta(repo)}
+              </a>
+            `;
+          })
+          .join("");
+      }
+
+      function renderRepoCards(targetGrid, repos, emptyMessage, compact = false) {
         if (repos.length === 0) {
           targetGrid.innerHTML = `<div class="status">${emptyMessage}</div>`;
           return;
@@ -492,25 +794,14 @@
           .map((repo) => {
             const description =
               repo.description || repo.readmeSummary || "这个项目还没有填写简介。";
-            const language = repo.language
-              ? `<span class="chip">${escapeHtml(repo.language)}</span>`
-              : "";
-            const stars =
-              repo.stargazers_count > 0
-                ? `<span class="chip warm">Stars ${repo.stargazers_count}</span>`
-                : "";
 
             return `
-              <a class="repo-entry" href="${repo.html_url}" aria-label="Open ${escapeHtml(repo.name)} on GitHub">
+              <a class="repo-entry${compact ? " compact" : ""}" href="${repo.html_url}" aria-label="Open ${escapeHtml(repo.name)} on GitHub">
                 <div>
                   <h3>${escapeHtml(repo.name)}</h3>
                   <p class="entry-description">${escapeHtml(description)}</p>
                 </div>
-                <div class="entry-meta">
-                  ${language}
-                  ${stars}
-                  <span>代码维护于 ${formatDate(repo.pushed_at)}</span>
-                </div>
+                ${renderMeta(repo)}
               </a>
             `;
           })
@@ -526,8 +817,9 @@
 
         repoCount.textContent = `${originalRepos.length} 个公开项目`;
         forkCount.textContent = `${forkRepos.length} 个 Fork 项目`;
+        renderFeaturedRepos(originalRepos);
         renderRepoCards(repoGrid, originalRepos, "暂时没有可展示的公开项目。");
-        renderRepoCards(forkGrid, forkRepos, "暂时没有可展示的 Fork 项目。");
+        renderRepoCards(forkGrid, forkRepos, "暂时没有可展示的 Fork 项目。", true);
       }
 
       function renderError(error) {
@@ -540,6 +832,7 @@
 
         repoCount.textContent = "读取失败";
         forkCount.textContent = "读取失败";
+        featuredGrid.innerHTML = '<div class="status">精选项目暂时无法读取。</div>';
         repoGrid.innerHTML = `
           <div class="status">
             GitHub API 可能限流或暂时不可访问。可以刷新页面，或直接访问
@@ -552,24 +845,31 @@
 
       async function loadRepos() {
         try {
-          const response = await fetch(apiUrl, {
-            headers: { Accept: "application/vnd.github+json" },
-          });
-
-          if (!response.ok) {
-            throw new Error(`GitHub API returned ${response.status}`);
-          }
-
-          const repos = await response.json();
-          writeCachedRepos(repos);
-          renderRepos(await addReadmeSummaries(repos));
-        } catch (error) {
+          const staticRepos = await loadStaticRepos();
+          writeCachedRepos(staticRepos);
+          renderRepos(staticRepos);
+        } catch (staticError) {
           try {
-            const staticRepos = await loadStaticRepos();
-            writeCachedRepos(staticRepos);
-            renderRepos(staticRepos);
-          } catch (staticError) {
-            console.error(staticError);
+            console.warn(staticError);
+            const cachedRepos = readCachedRepos();
+
+            if (cachedRepos.length > 0) {
+              renderRepos(cachedRepos);
+              return;
+            }
+
+            const response = await fetch(apiUrl, {
+              headers: { Accept: "application/vnd.github+json" },
+            });
+
+            if (!response.ok) {
+              throw new Error(`GitHub API returned ${response.status}`);
+            }
+
+            const repos = await response.json();
+            writeCachedRepos(repos);
+            renderRepos(await addReadmeSummaries(repos));
+          } catch (error) {
             renderError(error);
           }
         }
