@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Jamie0807 的 GitHub 个人博客主页，自动展示公开仓库、精选项目和 Fork 项目。"
+      content="Jamie0807's GitHub personal blog, featuring public repositories, selected projects, and forked projects."
     />
     <title>Jamie0807 | GitHub Personal Blog</title>
     <link
@@ -533,8 +533,8 @@
             </a>
           </div>
           <p class="migration-note">
-            部分代码仓库由原账号迁移而来，原账号为
-            <a href="https://github.com/Jamie-qian">@Jamie-qian</a>。页面中的维护时间优先展示代码实际推送时间。
+            Some repositories were migrated from my previous account,
+            <a href="https://github.com/Jamie-qian">@Jamie-qian</a>. Project dates prioritize actual code push time.
           </p>
           <div class="actions" aria-label="Profile links">
             <a class="button" href="https://github.com/Jamie0807">Visit GitHub</a>
@@ -561,31 +561,31 @@
           <p>Selected original projects are shown first, then the full public archive follows below.</p>
         </div>
         <div class="featured-grid" id="featured-grid" aria-live="polite">
-          <div class="status">正在从 GitHub 读取精选项目。</div>
+          <div class="status">Loading featured projects from the repository archive.</div>
         </div>
       </section>
 
       <section class="section-block" id="repos" aria-labelledby="repo-title">
         <div class="section-head">
           <p class="section-kicker">Repository Field Notes</p>
-          <h2 id="repo-title">公开项目</h2>
+          <h2 id="repo-title">Public Projects</h2>
           <p>Original repositories are sorted by the latest code push, so migrated projects do not look newer just because metadata changed.</p>
-          <span class="repo-count" id="repo-count">正在加载...</span>
+          <span class="repo-count" id="repo-count">Loading...</span>
         </div>
         <div class="archive-grid repo-list" id="repo-grid" aria-live="polite">
-          <div class="status">正在从 GitHub 读取项目。</div>
+          <div class="status">Loading public projects from the repository archive.</div>
         </div>
       </section>
 
       <section class="section-block" id="forks" aria-labelledby="fork-title">
         <div class="section-head">
           <p class="section-kicker">Read Later Library</p>
-          <h2 id="fork-title">Fork 项目</h2>
+          <h2 id="fork-title">Forked Projects</h2>
           <p>Forked repositories are kept separate from original work, like a reading shelf for frameworks, tools, and reference projects.</p>
-          <span class="repo-count" id="fork-count">正在加载...</span>
+          <span class="repo-count" id="fork-count">Loading...</span>
         </div>
         <div class="archive-grid repo-list" id="fork-grid" aria-live="polite">
-          <div class="status">正在从 GitHub 读取 Fork 项目。</div>
+          <div class="status">Loading forked projects from the repository archive.</div>
         </div>
       </section>
 
@@ -614,11 +614,38 @@
       const staticReposUrl = "data/repos.json";
       const apiUrl =
         "https://api.github.com/users/Jamie0807/repos?sort=pushed&per_page=100";
+      const englishDescriptionByRepoName = {
+        "Vue3": "A Vue 3, Vite, and TypeScript practice project with routing, state management, unit tests, linting, and formatting.",
+        "magicut": "An AI-powered desktop video editing platform that connects scripts, local media, voiceover, and editable timelines into an automated creator workflow.",
+        "React19": "A React learning project built with pnpm create vite, focused on components, Hooks, React 18 and 19 features, refs, Suspense, memo, data fetching, and state management.",
+        "AI-Workflow": "An AI workflow development platform for composing LLMs, RAG, HTTP requests, conditional branches, and structured outputs into reusable automation flows.",
+        "forecasting-uk-ageing-trends": "A full-stack Python and React data analysis platform for forecasting and visualizing UK ageing population trends with official ONS data.",
+        "ai-test": "A local browser-agent chat tool with a React and Vite frontend, an Express backend, and a LangChain.js agent runtime.",
+        "team-spec": "A React 19, Vite, TypeScript, and Tailwind CSS frontend project using GitHub Spec Kit and Codex Skills for specification-first development.",
+        "ai-codex": "An experimental repository for learning, validating, and documenting Codex workflows.",
+        "Interview": "A frontend interview study archive for 2026 topics and knowledge reviews.",
+        "Named-Entity-Recognition": "A compact Python package for training and evaluating NER models, including BiLSTM and Transformer approaches.",
+        "Tableau": "A Tableau learning project with business scenario datasets, tutorials, and dashboard best practices.",
+        "Python": "A Python practice project for LeetCode interview exercises.",
+        "My-SQL": "A repository for systematically learning and practicing SQL.",
+        "vue-cli": "A practice project generated with a newer Vue CLI setup.",
+        "blog": "A personal learning project built with React and Webpack.",
+        "vueGame": "A small puzzle game built with Vue.",
+        "-": "A Vue 2.0 project built with Webpack.",
+        "orderBy": "A table sorting demo.",
+        "shopping": "A shopping cart demo.",
+        "Person": "A small character/person demo project.",
+        "Yinyuetai": "A utility project for downloading Yinyuetai music videos.",
+        "vue-qqmusic": "A QQ Music clone built with the Vue ecosystem and Mint UI.",
+        "vuex-demo": "A shopping cart demo for learning Vuex.",
+        "free-programming-books-zh_CN": "A Chinese-language collection of free programming books.",
+        "manong": "An archive of Manong Weekly notes."
+      };
 
       function formatDate(value) {
-        return new Intl.DateTimeFormat("zh-CN", {
+        return new Intl.DateTimeFormat("en-US", {
           year: "numeric",
-          month: "short",
+          month: "long",
           day: "numeric",
         }).format(new Date(value));
       }
@@ -630,6 +657,25 @@
           .replaceAll(">", "&gt;")
           .replaceAll('"', "&quot;")
           .replaceAll("'", "&#039;");
+      }
+
+      function containsHan(value) {
+        return /[\u3400-\u9fff]/.test(String(value));
+      }
+
+      function getDisplayDescription(repo) {
+        if (englishDescriptionByRepoName[repo.name]) {
+          return englishDescriptionByRepoName[repo.name];
+        }
+
+        const description =
+          repo.description || repo.readmeSummary || "No project description has been added yet.";
+
+        if (containsHan(description)) {
+          return "Project notes are available in the repository README.";
+        }
+
+        return description;
       }
 
       function getReadmeSummary(markdown) {
@@ -754,7 +800,7 @@
           <div class="entry-meta">
             ${language}
             ${stars}
-            <span>代码维护于 ${formatDate(repo.pushed_at)}</span>
+            <span>Code maintained ${formatDate(repo.pushed_at)}</span>
           </div>
         `;
       }
@@ -763,13 +809,13 @@
         const featuredRepos = repos.slice(0, 2);
 
         if (featuredRepos.length === 0) {
-          featuredGrid.innerHTML = '<div class="status">暂时没有可展示的精选项目。</div>';
+          featuredGrid.innerHTML = '<div class="status">No featured projects to show yet.</div>';
           return;
         }
 
         featuredGrid.innerHTML = featuredRepos
           .map((repo) => {
-            const description = repo.description || repo.readmeSummary || "这个项目还没有填写简介。";
+            const description = getDisplayDescription(repo);
 
             return `
               <a class="featured-card" href="${repo.html_url}" aria-label="Open ${escapeHtml(repo.name)} on GitHub">
@@ -792,8 +838,7 @@
 
         targetGrid.innerHTML = repos
           .map((repo) => {
-            const description =
-              repo.description || repo.readmeSummary || "这个项目还没有填写简介。";
+            const description = getDisplayDescription(repo);
 
             return `
               <a class="repo-entry${compact ? " compact" : ""}" href="${repo.html_url}" aria-label="Open ${escapeHtml(repo.name)} on GitHub">
@@ -815,11 +860,11 @@
         const originalRepos = sortedRepos.filter((repo) => !repo.fork);
         const forkRepos = sortedRepos.filter((repo) => repo.fork);
 
-        repoCount.textContent = `${originalRepos.length} 个公开项目`;
-        forkCount.textContent = `${forkRepos.length} 个 Fork 项目`;
+        repoCount.textContent = `${originalRepos.length} public projects`;
+        forkCount.textContent = `${forkRepos.length} forked projects`;
         renderFeaturedRepos(originalRepos);
-        renderRepoCards(repoGrid, originalRepos, "暂时没有可展示的公开项目。");
-        renderRepoCards(forkGrid, forkRepos, "暂时没有可展示的 Fork 项目。", true);
+        renderRepoCards(repoGrid, originalRepos, "No public projects to show yet.");
+        renderRepoCards(forkGrid, forkRepos, "No forked projects to show yet.", true);
       }
 
       function renderError(error) {
@@ -830,16 +875,16 @@
           return;
         }
 
-        repoCount.textContent = "读取失败";
-        forkCount.textContent = "读取失败";
-        featuredGrid.innerHTML = '<div class="status">精选项目暂时无法读取。</div>';
+        repoCount.textContent = "Load failed";
+        forkCount.textContent = "Load failed";
+        featuredGrid.innerHTML = '<div class="status">Featured projects are temporarily unavailable.</div>';
         repoGrid.innerHTML = `
           <div class="status">
-            GitHub API 可能限流或暂时不可访问。可以刷新页面，或直接访问
-            <a href="https://github.com/${userName}?tab=repositories">GitHub 仓库列表</a>。
+            GitHub API may be rate limited or temporarily unavailable. You can refresh the page or visit the
+            <a href="https://github.com/${userName}?tab=repositories">GitHub repository list</a>.
           </div>
         `;
-        forkGrid.innerHTML = '<div class="status">Fork 项目暂时无法读取。</div>';
+        forkGrid.innerHTML = '<div class="status">Forked projects are temporarily unavailable.</div>';
         console.error(error);
       }
 

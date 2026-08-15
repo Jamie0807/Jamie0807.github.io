@@ -6,7 +6,7 @@ const repos = JSON.parse(fs.readFileSync("data/repos.json", "utf8"));
 
 assert.match(html, /id="repo-grid"/, "page exposes a repository grid");
 assert.match(html, /id="fork-grid"/, "page exposes a fork repository grid");
-assert.match(html, /Fork 项目/, "page has a separate fork project section");
+assert.match(html, /Forked Projects/, "page has a separate fork project section");
 assert.match(html, /blog-shell/, "page uses a blog-style shell");
 assert.match(html, /blog-header/, "page uses a compact blog header");
 assert.match(html, /repo-list/, "page uses a blog-style project list");
@@ -21,6 +21,11 @@ assert.match(html, /contact-strip/, "page includes the final contact section");
 assert.match(html, /Playfair Display/, "page uses the Pencil heading font");
 assert.match(html, /#F5F3EE/i, "page uses the Pencil warm paper background");
 assert.match(html, /#2D5E3A/i, "page uses the Pencil green accent");
+assert.doesNotMatch(
+  html,
+  /部分代码仓库|页面中的维护时间|代码维护于|公开项目|Fork 项目|正在|读取失败|这个项目还没有填写简介|暂时没有可展示|GitHub 仓库列表/,
+  "page UI copy should be English"
+);
 assert.doesNotMatch(html, /class="avatar"/, "blog-style page does not show a profile photo");
 assert.doesNotMatch(html, /id="avatar"/, "blog-style page does not depend on an avatar element");
 assert.match(
@@ -64,8 +69,18 @@ assert.match(
 );
 assert.match(
   html,
-  /代码维护于/,
-  "page labels project dates as code maintenance time"
+  /Code maintained/,
+  "page labels project dates as code maintenance time in English"
+);
+assert.match(html, /DateTimeFormat\("en-US"/, "project dates use English formatting");
+assert.doesNotMatch(html, /DateTimeFormat\("zh-CN"/, "project dates should not use Chinese formatting");
+assert.match(html, /function containsHan/, "page can detect non-English repository copy");
+assert.match(html, /function getDisplayDescription/, "page normalizes repository descriptions for the English page");
+assert.match(html, /englishDescriptionByRepoName/, "page includes English description overrides for highlighted repositories");
+assert.match(
+  html,
+  /Project notes are available in the repository README/,
+  "page has an English fallback for untranslated repository descriptions"
 );
 assert.match(
   html,
@@ -74,8 +89,8 @@ assert.match(
 );
 assert.match(
   html,
-  /部分代码仓库由原账号迁移/,
-  "page explains that some repositories were migrated from another account"
+  /Some repositories were migrated from my previous account/,
+  "page explains in English that some repositories were migrated from another account"
 );
 assert.match(
   html,
@@ -109,8 +124,8 @@ assert.match(
 );
 assert.match(
   html,
-  /GitHub API 可能限流或暂时不可访问/,
-  "page explains API failure instead of showing a generic error"
+  /GitHub API may be rate limited or temporarily unavailable/,
+  "page explains API failure in English instead of showing a generic error"
 );
 assert.doesNotMatch(
   html,
