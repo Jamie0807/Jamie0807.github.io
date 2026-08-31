@@ -287,13 +287,13 @@
         font-weight: 600;
       }
 
-      .featured-grid {
+      .article-grid {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 18px;
       }
 
-      .featured-card,
+      .article-card,
       .repo-entry {
         display: flex;
         min-width: 0;
@@ -306,18 +306,18 @@
         box-shadow: 0 16px 36px rgba(45, 94, 58, 0.05);
       }
 
-      .featured-card {
-        min-height: 220px;
+      .article-card {
+        min-height: 230px;
         padding: 24px;
       }
 
-      .featured-card:hover,
+      .article-card:hover,
       .repo-entry:hover {
         border-color: rgba(45, 94, 58, 0.45);
         text-decoration: none;
       }
 
-      .featured-card h3,
+      .article-card h3,
       .repo-entry h3 {
         margin: 0;
         overflow-wrap: anywhere;
@@ -326,12 +326,22 @@
         line-height: 1.35;
       }
 
-      .featured-card h3 {
+      .article-card h3 {
         font-family: "Playfair Display", Georgia, serif;
-        font-size: 1.7rem;
+        font-size: 1.45rem;
       }
 
-      .entry-description {
+      .article-date {
+        display: block;
+        margin: 0 0 12px;
+        color: var(--sage);
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .entry-description,
+      .article-excerpt {
         margin: 12px 0 0;
         color: var(--leaf-muted);
         line-height: 1.65;
@@ -444,7 +454,7 @@
           font-size: 3rem;
         }
 
-        .featured-grid,
+        .article-grid,
         .archive-grid,
         .repo-list {
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -478,7 +488,7 @@
         }
 
         .mini-panels,
-        .featured-grid,
+        .article-grid,
         .archive-grid,
         .repo-list {
           grid-template-columns: 1fr;
@@ -498,7 +508,7 @@
       </a>
       <div class="nav-links">
         <a href="about.html">About</a>
-        <a href="#featured">Featured</a>
+        <a href="#blog">Blog</a>
         <a href="#repos">Projects</a>
         <a href="#forks">Forks</a>
         <a class="nav-button" href="https://github.com/Jamie0807">GitHub</a>
@@ -555,14 +565,52 @@
         </div>
       </section>
 
-      <section class="section-block" id="featured" aria-labelledby="featured-title">
+      <section class="section-block" id="blog" aria-labelledby="blog-title">
         <div class="section-head">
-          <p class="section-kicker">Featured Notes</p>
-          <h2 id="featured-title">From Repository Studies to Readable Picks</h2>
-          <p>Selected original projects are shown first, then the full public archive follows below.</p>
+          <p class="section-kicker">Blog Articles</p>
+          <h2 id="blog-title">Notes from Building, Learning, and Shipping</h2>
+          <p>Short reflections from current projects, written like a working notebook rather than a product brochure.</p>
         </div>
-        <div class="featured-grid" id="featured-grid" aria-live="polite">
-          <div class="status">Loading featured projects from the repository archive.</div>
+        <div class="article-grid" aria-label="Blog articles">
+          <article class="article-card">
+            <div>
+              <span class="article-date">AI Workflow</span>
+              <h3>Designing AI workflows as reusable systems</h3>
+              <p class="article-excerpt">
+                Notes on turning LLM, RAG, HTTP, branching, and structured output steps into automations that can be tested and reused.
+              </p>
+            </div>
+            <div class="entry-meta">
+              <span class="chip">Agents</span>
+              <span>Field note</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div>
+              <span class="article-date">Magicut</span>
+              <h3>Turning video editing into an agent workflow</h3>
+              <p class="article-excerpt">
+                A look at connecting scripts, local media, voiceover, and timeline generation into a desktop creator workflow.
+              </p>
+            </div>
+            <div class="entry-meta">
+              <span class="chip">Video</span>
+              <span>Project note</span>
+            </div>
+          </article>
+          <article class="article-card">
+            <div>
+              <span class="article-date">Data Science</span>
+              <h3>Forecasting ageing trends with public data</h3>
+              <p class="article-excerpt">
+                How ONS population data becomes a Python and React dashboard for comparing regional ageing trends, forecasts, and clusters.
+              </p>
+            </div>
+            <div class="entry-meta">
+              <span class="chip">Forecasting</span>
+              <span>Study note</span>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -606,7 +654,6 @@
 
     <script>
       const userName = "Jamie0807";
-      const featuredGrid = document.querySelector("#featured-grid");
       const repoGrid = document.querySelector("#repo-grid");
       const repoCount = document.querySelector("#repo-count");
       const forkGrid = document.querySelector("#fork-grid");
@@ -806,31 +853,6 @@
         `;
       }
 
-      function renderFeaturedRepos(repos) {
-        const featuredRepos = repos.slice(0, 2);
-
-        if (featuredRepos.length === 0) {
-          featuredGrid.innerHTML = '<div class="status">No featured projects to show yet.</div>';
-          return;
-        }
-
-        featuredGrid.innerHTML = featuredRepos
-          .map((repo) => {
-            const description = getDisplayDescription(repo);
-
-            return `
-              <a class="featured-card" href="${repo.html_url}" aria-label="Open ${escapeHtml(repo.name)} on GitHub">
-                <div>
-                  <h3>${escapeHtml(repo.name)}</h3>
-                  <p class="entry-description">${escapeHtml(description)}</p>
-                </div>
-                ${renderMeta(repo)}
-              </a>
-            `;
-          })
-          .join("");
-      }
-
       function renderRepoCards(targetGrid, repos, emptyMessage, compact = false) {
         if (repos.length === 0) {
           targetGrid.innerHTML = `<div class="status">${emptyMessage}</div>`;
@@ -863,7 +885,6 @@
 
         repoCount.textContent = `${originalRepos.length} public projects`;
         forkCount.textContent = `${forkRepos.length} forked projects`;
-        renderFeaturedRepos(originalRepos);
         renderRepoCards(repoGrid, originalRepos, "No public projects to show yet.");
         renderRepoCards(forkGrid, forkRepos, "No forked projects to show yet.", true);
       }
@@ -878,7 +899,6 @@
 
         repoCount.textContent = "Load failed";
         forkCount.textContent = "Load failed";
-        featuredGrid.innerHTML = '<div class="status">Featured projects are temporarily unavailable.</div>';
         repoGrid.innerHTML = `
           <div class="status">
             GitHub API may be rate limited or temporarily unavailable. You can refresh the page or visit the
