@@ -217,6 +217,25 @@
         line-height: 1.72;
       }
 
+      .resume-list {
+        display: grid;
+        gap: 12px;
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .resume-list li {
+        display: grid;
+        gap: 4px;
+        color: var(--leaf-muted);
+        line-height: 1.62;
+      }
+
+      .resume-list strong {
+        color: var(--leaf-deep);
+      }
+
       .actions {
         display: flex;
         flex-wrap: wrap;
@@ -300,15 +319,15 @@
         <article class="about-card">
           <h2>Education</h2>
           <p>
-            University of Liverpool, with a focus on frontend development, full-stack engineering,
-            data science, and artificial intelligence.
+            MSc Data Science and Artificial Intelligence at the University of Liverpool, following a
+            20-week Pre-sessional English course that helped me bridge into postgraduate study in the UK.
           </p>
         </article>
         <article class="about-card">
           <h2>Experience</h2>
           <p>
-            Practical experience building React and Vue interfaces, FastAPI and NestJS services,
-            AI workflow prototypes, and data visualization dashboards.
+            Senior Frontend Developer in Beijing for nearly five years, building Vue-based CRM and
+            advertising workflow systems while leading frontend refactors, component reuse, and delivery quality.
           </p>
         </article>
         <article class="about-card">
@@ -318,6 +337,27 @@
             video editing, and UK ageing trends forecasting with ONS data.
           </p>
         </article>
+      </section>
+
+      <section class="profile-note" aria-labelledby="resume-title">
+        <h2 id="resume-title">Resume Snapshot</h2>
+        <ul class="resume-list">
+          <li>
+            <strong>Frontend engineering</strong>
+            React, Vue, TypeScript, and JavaScript, with practical work across component architecture,
+            state management, Vite, Webpack, Tailwind CSS, and performance optimization.
+          </li>
+          <li>
+            <strong>Full-stack delivery</strong>
+            Node.js, NestJS, Python FastAPI, PostgreSQL, and Prisma, covering RESTful APIs, BFF layers,
+            data modeling, deployment, and service integration.
+          </li>
+          <li>
+            <strong>AI, agents, and data</strong>
+            LangChain, LangGraph, RAG, Ollama, Qdrant, Pandas, NumPy, scikit-learn, and Recharts,
+            applied through workflow orchestration, forecasting, clustering, and interactive dashboards.
+          </li>
+        </ul>
       </section>
 
       <section class="profile-note" aria-labelledby="focus-title">

@@ -30,6 +30,14 @@ assert.match(aboutHtml, /Education/, "About page includes education experience")
 assert.match(aboutHtml, /Experience/, "About page includes work or practice experience");
 assert.match(aboutHtml, /Project Experience/, "About page includes project experience");
 assert.match(aboutHtml, /University of Liverpool/, "About page includes education details");
+assert.match(aboutHtml, /MSc Data Science and Artificial Intelligence/, "About page includes the resume education major");
+assert.match(aboutHtml, /20-week Pre-sessional English course/, "About page includes the pre-sessional course");
+assert.match(aboutHtml, /Senior Frontend Developer in Beijing/, "About page includes the Beijing senior frontend role");
+assert.match(aboutHtml, /nearly five years/, "About page includes the duration of senior frontend experience");
+assert.match(aboutHtml, /Resume Snapshot/, "About page includes a resume summary section");
+assert.match(aboutHtml, /React, Vue, TypeScript, and JavaScript/, "About page includes frontend skills from the resume");
+assert.match(aboutHtml, /Node\.js, NestJS, Python FastAPI, PostgreSQL, and Prisma/, "About page includes full-stack skills from the resume");
+assert.match(aboutHtml, /LangChain, LangGraph, RAG, Ollama, Qdrant, Pandas, NumPy, scikit-learn, and Recharts/, "About page includes AI and data skills from the resume");
 assert.match(aboutHtml, /AI workflow/, "About page mentions AI workflow experience");
 assert.match(aboutHtml, /Magicut/, "About page mentions representative project experience");
 assert.match(aboutHtml, /href="index\.html"/, "About page links back to the home page");
