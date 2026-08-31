@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="About Me｜我的勇气，是算清底线后，依然敢纵身一跃"
+    />
+    <title>About Me｜我的勇气，是算清底线后，依然敢纵身一跃</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23F5F3EE'/%3E%3Cpath d='M18 42c13 0 23-10 23-23 6 5 9 13 7 21-2 10-11 17-22 17-6 0-12-2-16-6 3-1 6-4 8-9Z' fill='%232D5E3A'/%3E%3C/svg%3E"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
+
+      :root {
+        color-scheme: light;
+        --paper: #F5F3EE;
+        --surface: #FBFAF6;
+        --leaf: #2D5E3A;
+        --leaf-deep: #1B3A28;
+        --leaf-muted: #4A6B52;
+        --sage: #7A9A80;
+        --line: #D6DDD0;
+        --shadow: rgba(45, 94, 58, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          linear-gradient(180deg, rgba(200, 219, 188, 0.28), transparent 360px),
+          var(--paper);
+        color: var(--leaf-deep);
+        font-family: "Geist", -apple-system, BlinkMacSystemFont, "SF Pro Text",
+          "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      .journal-shell {
+        width: min(920px, calc(100% - 44px));
+        margin: 0 auto;
+      }
+
+      .site-nav {
+        position: sticky;
+        top: 18px;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+        width: min(840px, calc(100% - 44px));
+        min-height: 64px;
+        margin: 32px auto 0;
+        padding: 10px 14px 10px 22px;
+        border: 1px solid rgba(214, 221, 208, 0.9);
+        border-radius: 8px;
+        background: rgba(251, 250, 246, 0.86);
+        box-shadow: 0 16px 40px var(--shadow);
+        backdrop-filter: blur(18px);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--leaf-deep);
+        font-weight: 700;
+      }
+
+      .brand-mark {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--leaf);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        color: var(--leaf-muted);
+        font-size: 0.88rem;
+        font-weight: 600;
+      }
+
+      .nav-button,
+      .button {
+        display: inline-flex;
+        min-height: 36px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 14px;
+        border: 1px solid var(--leaf);
+        border-radius: 999px;
+        background: var(--leaf);
+        color: #fff;
+        font-size: 0.86rem;
+        font-weight: 700;
+      }
+
+      .button.secondary {
+        border-color: var(--line);
+        background: transparent;
+        color: var(--leaf);
+      }
+
+      .article-header {
+        padding: 72px 0 30px;
+        text-align: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        min-height: 32px;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0 16px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(251, 250, 246, 0.72);
+        color: var(--leaf);
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+
+      h1 {
+        max-width: 820px;
+        margin: 18px auto 0;
+        color: var(--leaf-deep);
+        font-family: "Playfair Display", "PingFang SC", Georgia, serif;
+        font-size: 3.1rem;
+        line-height: 1.12;
+      }
+
+      .article-meta {
+        margin: 18px 0 0;
+        color: var(--sage);
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      .article-body {
+        margin: 0 auto 70px;
+        padding: 36px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(251, 250, 246, 0.82);
+        box-shadow: 0 16px 36px rgba(45, 94, 58, 0.05);
+      }
+
+      .article-body p {
+        margin: 0 0 22px;
+        color: var(--leaf-muted);
+        font-size: 1.02rem;
+        line-height: 1.92;
+      }
+
+      .article-body h2 {
+        margin: 40px 0 16px;
+        color: var(--leaf-deep);
+        font-size: 1.35rem;
+        line-height: 1.4;
+      }
+
+      .article-body hr {
+        height: 1px;
+        margin: 36px 0;
+        border: 0;
+        background: var(--line);
+      }
+
+      .article-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      footer {
+        padding: 34px 0 48px;
+        color: var(--sage);
+        font-size: 0.86rem;
+        text-align: center;
+      }
+
+      @media (max-width: 900px) {
+        .site-nav {
+          position: static;
+          width: min(100% - 28px, 840px);
+          margin-top: 20px;
+        }
+
+        h1 {
+          font-size: 2.45rem;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .journal-shell {
+          width: min(100% - 28px, 920px);
+        }
+
+        .site-nav {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 14px;
+        }
+
+        .nav-links {
+          width: 100%;
+          justify-content: space-between;
+          gap: 12px;
+        }
+
+        .article-header {
+          padding-top: 48px;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        .article-body {
+          padding: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Jamie0807 Journal</span>
+      </a>
+      <div class="nav-links">
+        <a href="../about.html">About</a>
+        <a href="../index.html#blog">Blog</a>
+        <a href="../index.html#repos">Projects</a>
+        <a href="../index.html#forks">Forks</a>
+        <a class="nav-button" href="https://github.com/Jamie0807">GitHub</a>
+      </div>
+    </nav>
+
+    <main class="journal-shell">
+      <header class="article-header">
+        <p class="eyebrow">About Me</p>
+        <h1>About Me｜我的勇气，是算清底线后，依然敢纵身一跃</h1>
+        <p class="article-meta">Personal Essay · August 31, 2026</p>
+      </header>
+
+      <article class="article-body">
+        <p>
+          常有人说我是个有勇气的人。也总有人把这份勇气和 “冲动”“莽撞” 划上等号，比如当年放下国内的一切选择出国留学，不少人第一反应都是：头脑发热吧？放着安稳的工作不要，去冒未知的险。
+        </p>
+        <p>
+          但只有我自己知道，我的勇气从来不是不计后果的横冲直撞。每一次站在人生的岔路口，我都会先推演过最坏的结局，备好兜底的方案，再决定要不要迈步。我敢拥抱不确定，但每一步选择，都是理性权衡过后的心甘情愿，而非一时兴起的头脑发热。
+        </p>
+
+        <h2>缘起：一场裁员，撞开了人生的新路口</h2>
+        <p>
+          故事的起点，是 2022 年那场猝不及防的裁员。那时我已经在北京做了近 5 年前端开发，从 2016 年踏上北漂路算起，整整 6 年的职场安稳，在那个夏天戛然而止。2022 年 6 月 17 日，28 岁的我正式离职。
+        </p>
+        <p>
+          没有急着投简历找下一份工作，我背起包开始了一场独自旅行。深圳、广州、昆明、大理、丽江、香格里拉……一路走一路看，在山川湖海的缝隙里，我第一次停下来，认真问自己：接下来的人生，到底要往哪走？
+        </p>
+
+        <h2>抉择：28 岁，我决定赌一把重启人生</h2>
+        <p>
+          旅行回家后和家人聊起未来，爸爸随口提了一句：要不要考虑出国留学？既能补学历，也能出去看看。这句话一下戳中了我心里最软的地方。我一直清楚自己的短板：双非私立本科出身，还不是计算机科班，学历始终是我职场里的一道坎。这笔教育投资，怎么算都对未来有价值。
+        </p>
+        <p>
+          可第一反应，我是抗拒的。28 岁，要掏空北漂几年攒下的全部积蓄，要从零面对语言关、陌生环境，更何况我本就不是 “读书的料”——当年靠美术艺考才考上三本院校，如今要重新捡起书本备考，简直像天方夜谭。
+        </p>
+        <p>
+          但这个念头一旦生了根，就再也压不下去。28 岁又怎样？为自己的人生重启一次，拼尽全力赌一把，本就是成年人最勇敢的事。
+        </p>
+
+        <h2>死磕：高考英语 50 分，我从零啃到了名校 offer</h2>
+        <p>
+          下定决心的第二天，我就回北京找中介、报机构，一头扎进了雅思备考里。没人想到我的英语基础差到什么地步：停留在童年剑桥二级的水平，高考英语只考了 50 多分，几乎等于从零开始。
+        </p>
+        <p>
+          我没给自己留退路。花两万多报了一对一基础课，从单词、语法一点点啃起。2022 年 10 月到 2023 年 2 月，每天雷打不动背单词、跟读练口语，碎片时间全砸在了英语上。基础课刚结束，立刻衔接 5.5 分班。2023 年 2 月到 3 月，我泡在五道口的教室里，上课、刷题、背词、练口语，日子循环往复，枯燥却扎实。
+        </p>
+        <p>
+          2023 年 4 月，第一次上雅思考场，纸笔考出分 5 分。没敢松懈，马上报了 6.5 分封闭班，住校备考省去通勤，全身心扑在学习上。5 月第二次考试，终于摸到了 5.5 分。本以为会一路往上走，可 6 月第三次考试，分数又跌回了 5 分。那段时间的挫败感，现在想起来还沉甸甸的。
+        </p>
+        <p>
+          6 月下旬我回家休整了一段，再回北京后，8 月底搬去了天津，正式结束了 2016 到 2023 年，整整 8 年的北漂生活。后面的 11 月、12 月，我又考了两次机考，分数却像焊死在了 5 分，死活冲不上去。
+        </p>
+        <p>
+          实在考不动了，我决定换条路走，申请语言班。所幸所有的死磕都有回响。2024 年 1 月 25 日，我拿到了利物浦大学 20 周语言班的 offer。那天看着邮件里的录取通知，之前所有的煎熬、迷茫、自我怀疑，忽然都有了落点。
+        </p>
+
+        <hr />
+
+        <p>
+          后来我常想，所谓勇敢，从来不是天生无畏。是明知前路难走，明知自己起点很低，依然愿意一点点挪，一步步熬；是算过了所有的坏结果，依然选择为想要的人生，再试一次。
+        </p>
+        <p>这就是我的勇气。也是我走到今天的全部答案。</p>
+
+        <div class="article-actions">
+          <a class="button" href="../index.html#blog">Back to Blog</a>
+          <a class="button secondary" href="../about.html">About Jamie</a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="journal-shell">
+      <span>Powered by GitHub Pages</span>
+    </footer>
+  </body>
+</html>

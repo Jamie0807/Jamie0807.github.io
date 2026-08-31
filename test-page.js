@@ -3,6 +3,7 @@ const assert = require("node:assert/strict");
 
 const html = fs.readFileSync("index.html", "utf8");
 const aboutHtml = fs.readFileSync("about.html", "utf8");
+const courageArticle = fs.readFileSync("blog/about-me-courage.html", "utf8");
 const repos = JSON.parse(fs.readFileSync("data/repos.json", "utf8"));
 
 assert.match(html, /id="repo-grid"/, "page exposes a repository grid");
@@ -31,9 +32,14 @@ assert.match(html, /id="blog"/, "page includes a blog article section");
 assert.match(html, /Blog Articles/, "page labels the section as blog articles");
 assert.match(html, /article-grid/, "page lays out blog articles separately from repositories");
 assert.match(html, /article-card/, "page renders blog articles as article cards");
-assert.match(html, /Designing AI workflows as reusable systems/, "blog section includes an AI workflow article");
-assert.match(html, /Turning video editing into an agent workflow/, "blog section includes a Magicut article");
-assert.match(html, /Forecasting ageing trends with public data/, "blog section includes a data forecasting article");
+assert.match(html, /href="blog\/about-me-courage\.html"/, "first blog article links to its real article page");
+assert.match(html, /About Me｜我的勇气，是算清底线后，依然敢纵身一跃/, "blog section includes the first real article");
+assert.match(courageArticle, /About Me｜我的勇气，是算清底线后，依然敢纵身一跃/, "article page includes the requested title");
+assert.match(courageArticle, /缘起：一场裁员，撞开了人生的新路口/, "article page includes the first requested section");
+assert.match(courageArticle, /抉择：28 岁，我决定赌一把重启人生/, "article page includes the second requested section");
+assert.match(courageArticle, /死磕：高考英语 50 分，我从零啃到了名校 offer/, "article page includes the third requested section");
+assert.match(courageArticle, /这就是我的勇气。也是我走到今天的全部答案。/, "article page includes the requested ending");
+assert.match(courageArticle, /href="..\/index\.html#blog"/, "article page links back to the blog section");
 assert.doesNotMatch(html, /Featured Notes/, "old featured repository label should be removed");
 assert.doesNotMatch(html, /From Repository Studies to Readable Picks/, "old featured repository heading should be removed");
 assert.doesNotMatch(html, /featured-grid/, "home page no longer uses featured repository cards");

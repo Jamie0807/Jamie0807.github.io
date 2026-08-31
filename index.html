@@ -289,8 +289,9 @@
 
       .article-grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: minmax(0, 760px);
         gap: 18px;
+        justify-content: center;
       }
 
       .article-card,
@@ -327,7 +328,7 @@
       }
 
       .article-card h3 {
-        font-family: "Playfair Display", Georgia, serif;
+        font-family: "Playfair Display", "PingFang SC", "Microsoft YaHei", Georgia, serif;
         font-size: 1.45rem;
       }
 
@@ -572,45 +573,19 @@
           <p>Short reflections from current projects, written like a working notebook rather than a product brochure.</p>
         </div>
         <div class="article-grid" aria-label="Blog articles">
-          <article class="article-card">
+          <a class="article-card" href="blog/about-me-courage.html" aria-label="Read About Me: my courage">
             <div>
-              <span class="article-date">AI Workflow</span>
-              <h3>Designing AI workflows as reusable systems</h3>
+              <span class="article-date">About Me</span>
+              <h3>About Me｜我的勇气，是算清底线后，依然敢纵身一跃</h3>
               <p class="article-excerpt">
-                Notes on turning LLM, RAG, HTTP, branching, and structured output steps into automations that can be tested and reused.
+                A personal essay about leaving a stable path, studying abroad, and choosing courage after carefully calculating the worst-case scenario.
               </p>
             </div>
             <div class="entry-meta">
-              <span class="chip">Agents</span>
-              <span>Field note</span>
+              <span class="chip">Personal</span>
+              <span>Essay</span>
             </div>
-          </article>
-          <article class="article-card">
-            <div>
-              <span class="article-date">Magicut</span>
-              <h3>Turning video editing into an agent workflow</h3>
-              <p class="article-excerpt">
-                A look at connecting scripts, local media, voiceover, and timeline generation into a desktop creator workflow.
-              </p>
-            </div>
-            <div class="entry-meta">
-              <span class="chip">Video</span>
-              <span>Project note</span>
-            </div>
-          </article>
-          <article class="article-card">
-            <div>
-              <span class="article-date">Data Science</span>
-              <h3>Forecasting ageing trends with public data</h3>
-              <p class="article-excerpt">
-                How ONS population data becomes a Python and React dashboard for comparing regional ageing trends, forecasts, and clusters.
-              </p>
-            </div>
-            <div class="entry-meta">
-              <span class="chip">Forecasting</span>
-              <span>Study note</span>
-            </div>
-          </article>
+          </a>
         </div>
       </section>
 
