@@ -46,17 +46,53 @@ assert.match(html, /Blog Articles/, "page labels the section as blog articles");
 assert.match(html, /article-grid/, "page lays out blog articles separately from repositories");
 assert.match(html, /article-card/, "page renders blog articles as article cards");
 assert.match(html, /href="blog\/about-me-courage\.html"/, "first blog article links to its real article page");
-assert.match(html, /我的勇气，是算清底线后，依然敢纵身一跃/, "blog section includes the first real article");
+assert.match(
+  html,
+  /My Courage: Taking the Leap After Counting the Cost/,
+  "blog section includes the translated first article"
+);
 assert.doesNotMatch(html, /<h3>About Me｜/, "blog card title should not include the About Me prefix");
-assert.match(courageArticle, /<h1>我的勇气，是算清底线后，依然敢纵身一跃<\/h1>/, "article page title removes the About Me prefix");
+assert.match(
+  courageArticle,
+  /<h1>My Courage: Taking the Leap After Counting the Cost<\/h1>/,
+  "article page uses the translated title"
+);
 assert.doesNotMatch(courageArticle, /<h1>About Me｜/, "article h1 should not include the About Me prefix");
-assert.match(courageArticle, /缘起：一场裁员，开启人生新思考/, "article page includes the updated first section");
-assert.match(courageArticle, /抉择：28 岁，我决定赌一把重启人生/, "article page includes the second requested section");
-assert.match(courageArticle, /死磕：高考英语50分，我从零啃雅思/, "article page includes the updated third requested section");
-assert.match(courageArticle, /2024 年 1 月 25 日，我终于拿到了利物浦大学20周语言班offer！/, "article page includes the updated offer sentence");
-assert.match(courageArticle, /从28岁被裁员陷入迷茫，到30岁勇敢奔赴异国，再到32岁带着收获圆满回国/, "article page includes the updated closing section");
-assert.match(courageArticle, /致每一个不甘平凡、敢于重新出发的我们/, "article page includes the updated dedication");
-assert.match(courageArticle, /这就是我的勇气。也是我走到今天的全部答案。/, "article page includes the requested ending");
+assert.match(
+  courageArticle,
+  /<h2>Origin: A Layoff Opened a New Chapter of Reflection<\/h2>/,
+  "article page includes the translated opening section"
+);
+assert.match(
+  courageArticle,
+  /<h2>The Choice: At 28, I Decided to Bet on Starting Over<\/h2>/,
+  "article page includes the translated choice section"
+);
+assert.match(
+  courageArticle,
+  /<h2>Relentless Effort: From a 50 on the Gaokao English Exam to IELTS from Scratch<\/h2>/,
+  "article page includes the translated IELTS section"
+);
+assert.match(
+  courageArticle,
+  /<h2>Written at the End<\/h2>/,
+  "article page includes the translated closing section"
+);
+assert.match(
+  courageArticle,
+  /I finally received an offer for the University of Liverpool's 20-week Pre-sessional English course/,
+  "article page includes the translated offer sentence"
+);
+assert.match(
+  courageArticle,
+  /This is my courage\. It is also the whole answer to how I got here\./,
+  "article page includes the translated ending"
+);
+assert.doesNotMatch(
+  courageArticle,
+  /我的勇气|缘起：一场裁员|抉择：28 岁|死磕：高考英语|写在最后/,
+  "article page no longer contains the previous Chinese essay copy"
+);
 assert.match(courageArticle, /href="..\/index\.html#blog"/, "article page links back to the blog section");
 assert.doesNotMatch(html, /Featured Notes/, "old featured repository label should be removed");
 assert.doesNotMatch(html, /From Repository Studies to Readable Picks/, "old featured repository heading should be removed");
